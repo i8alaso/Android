@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@drawable/fondobuscar">
+
+    <TextView
+        android:id="@+id/txtDeporte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tDeporte"
+        android:layout_alignBottom="@+id/tDeporte"
+        android:layout_alignLeft="@+id/txtHora"
+        android:background="@android:color/darker_gray"
+        android:text="@string/Deporte" />
+
+    <TextView
+        android:id="@+id/tDeporte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="67dp"
+        android:layout_toRightOf="@+id/txtDeporte"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tIncluido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtIncluido"
+        android:layout_alignBottom="@+id/txtIncluido"
+        android:layout_alignLeft="@+id/tDeporte"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/txtHora"
+        android:layout_alignLeft="@+id/tDeporte"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/txtIncluido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/txtDeporte"
+        android:layout_below="@+id/txtHora"
+        android:layout_marginTop="15dp"
+        android:text="@string/Incluido" />
+
+    <TextView
+        android:id="@+id/txtHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtDeporte"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/Hora" />
+
+    <TextView
+        android:id="@+id/tLugar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tIncluido"
+        android:layout_below="@+id/tIncluido"
+        android:layout_marginTop="28dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/txtLugar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tLugar"
+        android:layout_alignBottom="@+id/tLugar"
+        android:layout_alignLeft="@+id/txtIncluido"
+        android:text="@string/Lugar" />
+
+    <TextView
+        android:id="@+id/txtDescripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtLugar"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="26dp"
+        android:text="@string/Descripcion" />
+
+    <TextView
+        android:id="@+id/txtPrecio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/txtLugar"
+        android:layout_below="@+id/txtDescripcion"
+        android:layout_marginTop="22dp"
+        android:text="@string/Precio" />
+
+    <TextView
+        android:id="@+id/tPrecio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/txtPrecio"
+        android:layout_alignRight="@+id/tLugar"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/butExtras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="28dp"
+        android:layout_toLeftOf="@+id/butPagar"
+        android:text="@string/Extras" />
+
+    <Button
+        android:id="@+id/butPagar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button1"
+        android:layout_alignBottom="@+id/button1"
+        android:layout_alignLeft="@+id/tPrecio"
+        android:layout_marginLeft="21dp"
+        android:text="@string/Pagar" />
+
+</RelativeLayout>

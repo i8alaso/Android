@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/fondo"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="429dp"
+        android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/buttonDescuentos"
+        style="@style/AppTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonReserva"
+        android:layout_centerHorizontal="true"
+        android:text="@string/DESCUENTOS" />
+
+    <Button
+        android:id="@+id/buttonSalir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/Salir" />
+
+    <Button
+        android:id="@+id/button1"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
+    <SeekBar
+        android:id="@+id/seekBar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/buttonUnirse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonCuenta"
+        android:layout_marginBottom="66dp"
+        android:layout_toRightOf="@+id/button1"
+        android:text="@string/UNIRSE" />
+
+    <Button
+        android:id="@+id/buttonBuscar"
+        style="@style/AppBaseTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonUnirse"
+        android:layout_centerHorizontal="true"
+        android:text="@string/BUSCAR" />
+
+    <Button
+        android:id="@+id/buttonReserva"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonDescuentos"
+        android:layout_centerVertical="true"
+        android:text="@string/MisReservas" />
+
+    <Button
+        android:id="@+id/buttonCuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/buttonDescuentos"
+        android:layout_below="@+id/buttonReserva"
+        android:layout_marginTop="16dp"
+        android:text="@string/MiCuenta" />
+
+>
+    </RelativeLayout>
+    
+
+</ScrollView>
