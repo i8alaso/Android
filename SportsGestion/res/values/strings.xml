@@ -12,6 +12,9 @@
     <string name="Si"> Si</string>
     <string name="No"> No</string>
     <string name="MensajeSalirAplicacion"> ¿Quieres salir de la aplicación?</string>
+   	<string name= "Castellano"> Spanish</string>
+	<string name= "Euskera"> Euskera</string>
+	<string name= "Ingles"> English</string>
     
     <string name="Entrar"> Entrar</string>
     <string name="Salir"> Salir</string>
@@ -37,7 +40,7 @@
     <string name="Duchas"> DUCHAS</string>
     <string name="Precio"> PRECIO</string>
     <string name="Pagar"> PAGAR</string>
-    <string name="Extras"> AÑADIR EXTRAS</string>
+    <string name="Imprimir"> IMPRIMIR TICKET</string>
     <string name="Descripcion"> Descripción del \ncentro y de la \ninstalación a \n 
         reservar</string>
     <string name="TituloExtras"> Extras</string>

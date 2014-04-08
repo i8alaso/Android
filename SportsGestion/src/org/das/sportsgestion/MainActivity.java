@@ -2,6 +2,7 @@ package org.das.sportsgestion;
 
 import java.util.Locale;
 
+
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
@@ -31,6 +32,8 @@ public class MainActivity extends FragmentActivity{
 	private Button btnReservas;
 	private Button btnCuenta;
 	private Button btnSalir;
+	
+	private String idiomaSeleccionado;
 	
 	private Intent intBuscar;
 	
@@ -77,7 +80,7 @@ public class MainActivity extends FragmentActivity{
 			@Override
 			public void onClick(View v) {
 				MainActivity.this.finish();
-				idioma();
+				idioma("");
 				
 				
 			}
@@ -132,16 +135,37 @@ public class MainActivity extends FragmentActivity{
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			case R.id.menu_castellano:
+				idiomaSeleccionado = "es";
+				idioma("eu");
+			return true;
+			
+			case R.id.menu_euskera:
+				idiomaSeleccionado = "eu";
+				idioma("eu");
+			return true;
+			
+			case R.id.menu_ingles:
+				idiomaSeleccionado = "en";
+			return true;
+			
+			case R.id.Anadir:			
+			return true;
+			
+			case R.id.Guardar:		
+			return true;
+			
+			default:
+			return super.onOptionsItemSelected(item);
+		}
 	}
 
 	
-	private void idioma(){
+	private void idioma(String pIdioma){
 		Intent intLang = new Intent(getApplicationContext(), MainActivity.class);
-		intLang.putExtra("Lenguaje", "eu");
+		intLang.putExtra("Lenguaje", pIdioma);
 		startActivity(intLang);
 		
 	}

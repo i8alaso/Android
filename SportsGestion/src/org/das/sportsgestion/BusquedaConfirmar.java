@@ -44,14 +44,13 @@ public class BusquedaConfirmar extends FragmentActivity {
 		tHora.setBackgroundColor(Color.GRAY);
 		tIncluido = (TextView) findViewById(R.id.tIncluido);
 		tIncluido.setText("ENTRADAS \n DUCHAS \n LUZ");
-		tLugar = (TextView) findViewById(R.id.tLugar);
-		tLugar.setText("CLUB DE TENIS");
+//		tLugar = (TextView) findViewById(R.id.tLugar);
+//		tLugar.setText("CLUB DE TENIS");
 		tPrecio = (TextView) findViewById(R.id.tPrecio);
 		tPrecio.setText("5,50" + "€");
 		
 		
 		butExtras = (Button) findViewById(R.id.butExtras);
-		butExtras.setText(R.string.Extras);
 		butExtras.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
