@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SportsGestion</string>
+    <string name="action_settings">Settings</string>
+    
+    <string name="BUSCAR">BILATU</string>
+    <string name="DESCUENTOS"></string>
+    <string name="MiCuenta"></string>
+    <string name="MisReservas"></string>
+    <string name="UNIRSE">SARTU JOKATZEKO </string>
+    <string name="Si"> BAI </string>
+    <string name="No"> EZ</string>
+    <string name="MensajeSalirAplicacion"> Aplikaziotik irten nahi duzula ziur zaude?</string>
+    
+    <string name="Entrar"> SARTU</string>
+    <string name="Salir"> IRTEN </string>
+    
+    <string name="QueBuscas"> Zer bilatu nahi duzu? </string>
+    
+	<string name= "kDeporte"> <i>Kirola</i> </string>
+	<string name= "kLugar"> <i>Lekua</i> </string>
+	<string name= "kHora"> <i>Ordua</i> </string>
+	<string name= "kProvincia"> <i></i> </string>
+	<string name= "kLocalidad"> <i></i> </string>
+    <string name="kIncluido"> <i></i></string>
+       
+    <string name="Deporte"> KIROLA</string>
+    <string name="Lugar"> LEKUA</string>
+    <string name="Hora"> ORDUA</string>
+    <string name="Incluido"> SARTZEN DENA</string>
+    
+    <string name="Entradas"> Sarrera</string>
+    <string name="Duchas"> </string>
+    <string name="Precio"> Prezio</string>
+    <string name="Pagar"> ORDAINDU</string>
+    <string name="Extras"> EXTRAK GEHITU</string>
+    <string name="Descripcion"> Lekuaren \neta instalazioaren \ndeskribapena</string>
+    <string name="TituloExtras"> Extrak</string>
+    
+	<string name= "Usuario"> <i> Erabiltzailea </i></string>
+	<string name= "Contrasenia"> <i> Pasahitza</i></string>
+
+    
+    
+    
+
+</resources>

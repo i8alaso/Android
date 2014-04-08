@@ -1,0 +1,90 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".BusquedaActivity" >
+
+    <EditText
+        android:id="@+id/edBuscar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/QueBuscas"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:text="@string/kDeporte" />
+
+    <EditText
+        android:id="@+id/edProvincia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edBuscar"
+        android:layout_below="@+id/edBuscar"
+        android:layout_marginTop="24dp"
+        android:ems="10" 
+        android:text="@string/kProvincia"/>
+
+    <EditText
+        android:id="@+id/edHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edCentro"
+        android:layout_below="@+id/edCentro"
+        android:layout_marginTop="22dp"
+        android:ems="10" 
+        android:text="@string/kHora"/>
+
+    <EditText
+        android:id="@+id/edCentro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edLocalidad"
+        android:layout_below="@+id/edLocalidad"
+        android:layout_marginTop="18dp"
+        android:ems="10"
+        android:text="@string/kLugar" />
+
+    <EditText
+        android:id="@+id/edLocalidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edProvincia"
+        android:layout_below="@+id/edProvincia"
+        android:layout_marginTop="32dp"
+        android:ems="10" 
+        android:text="@string/kLocalidad"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/edHora"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Rellenar" />
+
+    <Button
+        android:id="@+id/buttonBuscar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button2"
+        android:layout_alignBottom="@+id/button2"
+        android:layout_alignRight="@+id/edHora"
+        android:text="@string/BUSCAR" />
+
+    <TextView
+        android:id="@+id/QueBuscas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
+        android:text="¿Qué buscas?"
+        android:textSize="@dimen/newDimension" />
+
+</RelativeLayout>
