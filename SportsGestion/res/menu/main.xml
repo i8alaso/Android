@@ -1,6 +1,7 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="org.das.sportsgestion.MainActivity" >
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+   
+    <!-- xmlns:tools="http://schemas.android.com/tools"
+    tools:context="org.das.sportsgestion.MainActivity"  -->
     	
     	<item
 			android:id="@+id/menu_settings"

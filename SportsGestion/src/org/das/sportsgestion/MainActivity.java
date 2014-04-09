@@ -7,6 +7,8 @@ import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -80,7 +82,7 @@ public class MainActivity extends FragmentActivity{
 			@Override
 			public void onClick(View v) {
 				MainActivity.this.finish();
-				idioma("");
+				idioma("eu");
 				
 				
 			}
@@ -134,21 +136,30 @@ public class MainActivity extends FragmentActivity{
 		});		
 	}
 
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 			case R.id.menu_castellano:
 				idiomaSeleccionado = "es";
-				idioma("eu");
+				idioma(idiomaSeleccionado);
 			return true;
 			
 			case R.id.menu_euskera:
 				idiomaSeleccionado = "eu";
-				idioma("eu");
+				idioma(idiomaSeleccionado);
 			return true;
 			
 			case R.id.menu_ingles:
 				idiomaSeleccionado = "en";
+				idioma(idiomaSeleccionado);
 			return true;
 			
 			case R.id.Anadir:			
