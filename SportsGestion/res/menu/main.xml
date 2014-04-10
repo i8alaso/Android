@@ -3,42 +3,55 @@
     <!-- xmlns:tools="http://schemas.android.com/tools"
     tools:context="org.das.sportsgestion.MainActivity"  -->
     	
-    	<item
-			android:id="@+id/menu_settings"
-			android:showAsAction="ifRoom"
-			android:icon="@android:drawable/ic_menu_preferences"
-			android:title="@string/action_settings">
-			
-			 <menu>
-	            <item android:id="@+id/menu_castellano"
-	                  android:title="@string/Castellano" 
-	                  android:showAsAction="always"
-	                  android:icon="@android:drawable/ic_menu_more"/>
-	            <item android:id="@+id/menu_euskera"
-	                  android:title="@string/Euskera" 
-	                  android:showAsAction="always"
-	                  android:icon="@android:drawable/ic_popup_sync"/>
-	           	<item android:id="@+id/menu_ingles"
-	                  android:title="@string/Ingles"
-	                  android:showAsAction="always" 
-	                  android:icon="@android:drawable/ic_menu_agenda"/>
-	        </menu>
-		</item>
-			
-		<item
-			android:id="@+id/Guardar"
+    	<item 			
+    	    android:id="@+id/menu_settings"
 			android:showAsAction="always"
-			android:icon="@android:drawable/ic_menu_save"
-			android:title="Guardar"/>
+			android:icon="@android:drawable/ic_menu_preferences"
+			android:title="@string/Ajustes">
+			    	    
+    	    	<menu>
+			    	<item
+						android:id="@+id/idioma"
+						android:showAsAction="always"
+						android:icon="@android:drawable/ic_menu_more"
+						android:title="Idioma">
+						
+						 <menu>
+				            <item android:id="@+id/menu_castellano"
+				                  android:title="@string/Castellano" 
+				                  android:showAsAction="always"
+				                  android:icon="@drawable/spain"/>
+				            <item android:id="@+id/menu_euskera"
+				                  android:title="@string/Euskera" 
+				                  android:showAsAction="always"
+				                  android:icon="@drawable/ikurrina"/>
+				           	<item android:id="@+id/menu_ingles"
+				                  android:title="@string/Ingles"
+				                  android:showAsAction="always"
+				                  android:icon="@drawable/engflag"/>
+				        </menu>
+					</item>           
+		            
+		            <item android:id="@+id/menu_admin"
+		                  android:showAsAction="always"
+		                  android:title="@string/Administrador"/>
+		            
+			        </menu>
+				</item>
+
 		<item
+			android:id="@+id/Ayuda"
+			android:showAsAction="always"
+			android:icon="@android:drawable/ic_menu_help"
+			android:title="Ayuda"/>
+	<!--  	<item
 			android:id="@+id/Anadir"
 			android:showAsAction="ifRoom|withText"
 			android:icon="@android:drawable/ic_menu_add"
-			android:title="Anadir"/>
-		
+			android:title="Anadir"/>-->
 		<item 
 		    android:id="@+id/Eliminar"
-		    android:showAsAction="ifRoom"
+		    android:showAsAction="never"
 		    android:icon="@android:drawable/ic_menu_delete" 
 		    android:title="Eliminar"
 		  />

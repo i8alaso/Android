@@ -4,52 +4,70 @@
     <string name="app_name">SportsGestion</string>
     <string name="action_settings">Settings</string>
     
+
+    
+<!-- General -->
+    <string name="Si"> Si</string>
+    <string name="No"> No</string>
+
+<!-- Menu -->
+   	<string name= "Castellano"> Castellano</string>
+	<string name= "Euskera"> Euskera</string>
+	<string name= "Ingles"> English</string>
+	<string name= "Ajustes"> Ajustes</string>  
+	<string name= "Administrador"> Administrador</string>  
+    
+<!-- MainActivity -->
     <string name="BUSCAR">BUSCAR</string>
+    <string name="MensajeSalirAplicacion"> ¿Quieres salir de la aplicación?</string>
+	<string name= "Ayuda"> Esta es la ayuda de la aplicación desarrollada por Iñigo Ochoa de Erive Lasso de la Vega
+	    para la asigantura de DAS</string>
+	    
+
+    
+<!-- BusquedaActivity.java -->    
+    <string name="Deporte"> DEPORTE</string>
+    <string name="Lugar"> LUGAR</string>
+    <string name="Hora"> HORA</string>
+    <string name="Incluido"> INCLUIDO</string>
+    <string name="QueBuscas"> ¿Qué buscas?</string>
+
+<!-- BusquedaConfirmar.java -->
+    <string name="Imprimir"> IMPRIMIR TICKET</string>
+    <string name="Distancia"> DISTANCIA </string> 
+    
+<!-- CalcularDistancia.java  -->
+    <string name="MiPosicion"> MI POSICION </string>
+    <string name="Calcular"> CALCULAR DISTANCIA </string>
+    <string name="Longitud"> Longitud</string>
+    <string name="Latitud"> Latitud </string>
+    
+    
+    
+    
+    <string name="Usuario"> <i>Usuario</i></string>
+    <string name="Contrasenia"> <i>Contraseña</i></string>
+    <string name="title_activity_busqueda">BusquedaActivity</string>
+    
+<!-- BORRAR -->    
     <string name="DESCUENTOS">DESCUENTOS %</string>
     <string name="MiCuenta"> MI CUENTA</string>
     <string name="MisReservas"> MIS RESERVAS</string>
     <string name="UNIRSE"> UNIRSE PARA JUGAR </string>
-    <string name="Si"> Si</string>
-    <string name="No"> No</string>
-    <string name="MensajeSalirAplicacion"> ¿Quieres salir de la aplicación?</string>
-   	<string name= "Castellano"> Spanish</string>
-	<string name= "Euskera"> Euskera</string>
-	<string name= "Ingles"> English</string>
-    
+    <string name="Descripcion"> Descripción del \ncentro y de la \ninstalación a \nreservar</string>
+    <string name="TituloExtras"> Extras</string>
+    <string name="Entradas"> ENTRADA</string>
+    <string name="Duchas"> DUCHAS</string>
+    <string name="Precio"> PRECIO</string>
+    <string name="Pagar"> PAGAR</string>
     <string name="Entrar"> Entrar</string>
     <string name="Salir"> Salir</string>
-    
-    <string name="QueBuscas"> ¿Qué buscas?</string>
-    
-    
     <string name="kDeporte"> <i>Deporte</i></string>
     <string name="kLugar"> <i>Lugar</i></string>
     <string name="kHora"> <i>Hora</i></string>
     <string name="kProvincia"> <i>Provincia</i></string>
     <string name="kLocalidad"> <i>Localidad</i></string>
     <string name="kIncluido"> <i>Incluido</i></string>
-    
-    
-    
-    <string name="Deporte"> DEPORTE</string>
-    <string name="Lugar"> LUGAR</string>
-    <string name="Hora"> HORA</string>
-    <string name="Incluido"> INCLUIDO</string>
-    
-    <string name="Entradas"> ENTRADA</string>
-    <string name="Duchas"> DUCHAS</string>
-    <string name="Precio"> PRECIO</string>
-    <string name="Pagar"> PAGAR</string>
-    <string name="Imprimir"> IMPRIMIR TICKET</string>
-    <string name="Descripcion"> Descripción del \ncentro y de la \ninstalación a \n 
-        reservar</string>
-    <string name="TituloExtras"> Extras</string>
-    
-    <string name="Usuario"> <i>Usuario</i></string>
-    <string name="Contrasenia"> <i>Contraseña</i></string>
-    <string name="title_activity_busqueda">BusquedaActivity</string>
-    
-    
     
 
 </resources>

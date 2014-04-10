@@ -2,7 +2,6 @@ package org.das.sportsgestion;
 
 import java.util.Locale;
 
-
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
@@ -26,6 +25,8 @@ import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 
 public class MainActivity extends FragmentActivity{
 	
@@ -162,10 +163,12 @@ public class MainActivity extends FragmentActivity{
 				idioma(idiomaSeleccionado);
 			return true;
 			
-			case R.id.Anadir:			
+			case R.id.Ayuda:
+				ayuda();				
 			return true;
 			
-			case R.id.Guardar:		
+			case R.id.menu_admin:
+				administrador();
 			return true;
 			
 			default:
@@ -174,12 +177,51 @@ public class MainActivity extends FragmentActivity{
 	}
 
 	
+
+
 	private void idioma(String pIdioma){
+		MainActivity.this.finish();
 		Intent intLang = new Intent(getApplicationContext(), MainActivity.class);
 		intLang.putExtra("Lenguaje", pIdioma);
 		startActivity(intLang);
 		
 	}
+	
+	private void ayuda(){
+		AlertDialog.Builder aDialog = new AlertDialog.Builder(MainActivity.this);
+		aDialog.setTitle("Ayuda");
+		aDialog.setMessage(R.string.Ayuda);
+		aDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.cancel();
+			}
+		});
+		aDialog.show();	
+	}
 
-
+	private void administrador() {
+		AlertDialog.Builder adminAlert = new AlertDialog.Builder(this);
+		
+		adminAlert.setTitle("messagetitle");
+		adminAlert.setMessage("here is the message");
+		
+		final EditText input = new EditText(this);
+		LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+				LinearLayout.LayoutParams.FILL_PARENT,
+				LinearLayout.LayoutParams.FILL_PARENT);
+		input.setLayoutParams(lp);
+		adminAlert.setView(input);
+		
+		adminAlert.setPositiveButton("Send via email", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int whichButton) {
+				
+			}
+		});
+		
+		
+		adminAlert.show();
+		
+	}
 }

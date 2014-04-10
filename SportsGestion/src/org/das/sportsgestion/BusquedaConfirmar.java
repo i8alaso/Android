@@ -3,12 +3,20 @@ package org.das.sportsgestion;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.NotificationCompat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -26,7 +34,7 @@ public class BusquedaConfirmar extends FragmentActivity {
 	private TextView txtDescripcion;
 	private TextView tPrecio;
 	
-	private Button butExtras;
+	private Button butDistancia;
 	private Button butPagar;
 
 	@Override
@@ -50,44 +58,49 @@ public class BusquedaConfirmar extends FragmentActivity {
 		tPrecio.setText("5,50" + "€");
 		
 		
-		butExtras = (Button) findViewById(R.id.butExtras);
-		butExtras.setOnClickListener(new View.OnClickListener() {
+		butDistancia = (Button) findViewById(R.id.butDistancia);
+		butDistancia.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View arg0) {
-				AlertDialog.Builder dialog = new AlertDialog.Builder(BusquedaConfirmar.this);
-				dialog.setTitle(R.string.TituloExtras);
-				final ArrayList listaExtras = new ArrayList();
-				final CharSequence [] extras = {"Entrada     1.00€", "Luz       2.00€", "Material", "Toallas"};
-				final boolean [] elegidos = {true, true, false,false};
-				
-				dialog.setMultiChoiceItems(extras, elegidos, new DialogInterface.OnMultiChoiceClickListener() {
-					
-					@Override
-					public void onClick(DialogInterface dialog, int indexSelected, boolean isChecekd) {
-						if(isChecekd){
-							listaExtras.add(indexSelected);
-						}
-						else if(listaExtras.contains(indexSelected)){
-							listaExtras.remove(Integer.valueOf(indexSelected));
-						}
-						
-					}
-				});
-				
-				dialog.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-					
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						dialog.cancel();
-						
-					}
-				});
-				dialog.show();
+				Intent intentDistancia = new Intent(getApplicationContext(), CalcularDistancia.class);
+				startActivity(intentDistancia);
+			}
+		});	
+		
+		butPagar = (Button) findViewById(R.id.butPagar);
+		butPagar.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+//				Intent intentTicket = new Intent();
+//				
+//				PendingIntent intentEnNoti = PendingIntent.getActivity(this, 0, intentTicket, PendingIntent.FLAG_NO_CREATE);
+//				//PendingIntent intentNO = PendingIntent.getActivity(this, 0, new Intent(), PendingIntent.FLAG_CANCEL_CURRENT);
+//				
+//				NotificationCompat.Builder aBuilder = new NotificationCompat.Builder(BusquedaConfirmar.this);
+//				aBuilder.setSmallIcon(android.R.drawable.stat_notify_missed_call);
+//				//aBuilder.setLargeIcon(((BitmapDrawable)getResources().getDrawable(R.drawable.onin)).getBitmap());
+//				aBuilder.setContentTitle("Pincha si quieres el ticket");
+//				aBuilder.setTicker("¿Quieres el ticket?");
+//				aBuilder.setContentIntent(intentEnNoti);
+//				//aBuilder.setDefaults(Notification.DEFAULT_ALL);
+//				//aBuilder.setDefaults(Notification.DEFAULT_LIGHTS);
+//				
+//				aBuilder.setLights(0xFF0000FF,100,100);
+////				aBuilder.setPriority(Notification.PRIORITY_DEFAULT);
+//
+//				aBuilder.addAction(R.drawable.tick, "SÍ", intentEnNoti);
+//				aBuilder.addAction(R.drawable.x, "NO", intentNO);
+//				
+//				//Sobra
+//				//getApplicationContext();		
+//				NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+//				mNotificationManager.notify(1,aBuilder.build());
+//				
 			}
 		});
 	}
-	
+}
 	
 
-}

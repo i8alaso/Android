@@ -39,7 +39,7 @@ public class LaBD extends SQLiteOpenHelper{
 	}
 	
 	public void insertar(String pClave, String pNombre, String pLocalidad, String pDeporte, Float pLongitud, Float pLatitud){
-		sString sql = "INSERT INTO Usuarios ('Nombre') VALUES ('"+ pClave +"')";
+		String sql = "INSERT INTO Usuarios ('Nombre') VALUES ('"+ pClave +"')";
 		this.db.execSQL(sql);
 	}
 	
@@ -50,11 +50,11 @@ public class LaBD extends SQLiteOpenHelper{
 
 	public void eliminar(String pNombre) {
 		String sql = "DELETE FROM Usuarios WHERE Nombre ='" + pNombre + "'";
-	sd	this.db.execSQL(sql);
+		this.db.execSQL(sql);
 	}
 
 	public void eliminar(int position) {
-	sd	String sql = "DELETE FROM Usuarios WHERE Codigo ='" + position + "'";
+		String sql = "DELETE FROM Usuarios WHERE Codigo ='" + position + "'";
 		this.db.execSQL(sql);
 	}
 }
