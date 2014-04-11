@@ -69,18 +69,19 @@ public class FragmentLista extends ListFragment {
 		}
 
 	
-	public void updateList(String pLocalidad, String pDeporte) {
+	public String updateList(String pLocalidad, String pDeporte) {
 		Cursor aCursor = LaBD.getMiBD(getActivity()).buscarPolideportivo(pLocalidad, pDeporte);
 		adaptador.clear();
-		String nombre;
+		String nombre = "";
 		
 		if(aCursor.moveToFirst()) {
 			do {
 				nombre = aCursor.getString(0);
 	//			datos.add(id + ", " + nombre);
-				adaptador.add(nombre);
+				adaptador.add("POLIDEPORTIVO " + nombre);
 			} while(aCursor.moveToNext());
 		}
+		return nombre;
 	}
 }
 	

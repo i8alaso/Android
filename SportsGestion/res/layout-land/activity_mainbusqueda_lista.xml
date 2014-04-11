@@ -13,19 +13,17 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_weight="50"
         tools:layout="@layout/fragment_fragmentolista" />
 
     <fragment
         android:id="@+id/fragment2"
         android:name="org.das.sportsgestion.FragmentDetails"
-        android:layout_width="100dp"
+        android:layout_width="55dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/fragment1"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/fragment1"
-        android:layout_weight="50"
         tools:layout="@layout/fragment_fragmentodetalles" />
 
 </RelativeLayout>

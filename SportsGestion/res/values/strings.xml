@@ -38,8 +38,9 @@
 <!-- BusquedaConfirmar.java (FragmentDetails) -->
     <string name="Imprimir"> IMPRIMIR TICKET</string>
     <string name="Distancia"> DISTANCIA </string> 
-    <string name="Calle"> Calle</string>
-    <string name="Localidad"> Localidad</string>
+    <string name="Nombre"> NOMBRE</string>
+    <string name="Calle"> CALLE</string>
+    <string name="Localidad"> LOCALIDAD</string>
     <string name="Precio"> Precio</string>
     <string name="Instalaciones"> Instalaciones \npara que deporte</string>
     

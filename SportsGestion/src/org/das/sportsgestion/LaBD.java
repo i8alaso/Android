@@ -29,7 +29,8 @@ public class LaBD extends SQLiteOpenHelper{
 		db.execSQL("CREATE TABLE Polideportivos ('Nombre' TEXT PRIMARY KEY,'Localidad' TEXT, 'Calle' TEXT, 'Deporte' TEXT, 'Latitud' DOUBLE, 'Longitud' DOUBLE, 'Precio' DOUBLE)");
 		db.execSQL("CREATE TABLE Coche ('Codigo' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'Nombre' TEXT)");
 		
-		db.execSQL("INSERT INTO 'Polideportivos' (Nombre, Localidad, Calle, Deporte) values ('Txurdinaga', 'Bilbao', '', 'Futbol')" );
+		db.execSQL("INSERT INTO 'Polideportivos' (Nombre, Localidad, Calle, Deporte, Precio) values ('TXURDINAGA', 'Bilbao 48004', 'c/ Radio', 'Futbol', 5.54)" );
+		db.execSQL("INSERT INTO 'Polideportivos' (Nombre, Localidad, Calle, Deporte) values ('FANGO REKALDE', 'Bilbao', '', 'Futbol')" );
 		
 		
 	}
@@ -63,6 +64,11 @@ public class LaBD extends SQLiteOpenHelper{
 
 	public void eliminar(String pNombre) {
 		String sql = "DELETE FROM Polideportivos WHERE Nombre ='" + pNombre + "'";
+		this.db.execSQL(sql);
+	}
+	
+	public void eliminarTodo(){
+		String sql = "DELETE * FROM Polideportivos";
 		this.db.execSQL(sql);
 	}
 }

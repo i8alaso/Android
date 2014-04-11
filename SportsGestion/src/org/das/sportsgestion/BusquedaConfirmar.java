@@ -5,6 +5,9 @@ import java.util.ArrayList;
 
 
 
+
+
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Notification;
@@ -13,6 +16,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
@@ -25,13 +29,12 @@ import android.widget.TextView;
 
 public class BusquedaConfirmar extends FragmentActivity {
 	
-	private TextView txtDeporte;
-	private TextView txtCalle;
-	private TextView txtLocalidad;
-	private TextView txtPrecio;
-	
+	private TextView txtDeporte, txtNombre, txtCalle, txtLocalidad, txtPrecio;
+
 	private Button butDistancia;
 	private Button butPagar;
+	
+	private String nombre;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,14 +42,16 @@ public class BusquedaConfirmar extends FragmentActivity {
 		
 		setContentView(R.layout.activity_main_busquedaconfirmar);
 		
+		txtNombre = (TextView) findViewById(R.id.txtNombre);
 		txtDeporte = (TextView) findViewById(R.id.txtInstalaciones);
 		txtDeporte.setBackgroundColor(Color.LTGRAY);
 		txtDeporte.setTextColor(Color.WHITE);
+		txtLocalidad = (TextView) findViewById(R.id.txtLocalidad);
 		txtCalle = (TextView) findViewById(R.id.txtCalle);
 		txtCalle.setBackgroundColor(Color.GRAY);
 		txtPrecio = (TextView) findViewById(R.id.txtPrecio);
 
-		
+		actualizarCampos();
 		
 		butDistancia = (Button) findViewById(R.id.butDistancia);
 		butDistancia.setOnClickListener(new View.OnClickListener() {
@@ -94,6 +99,27 @@ public class BusquedaConfirmar extends FragmentActivity {
 //				
 			}
 		});
+	}
+	
+	private void actualizarCampos(){
+		nombre = getIntent().getExtras().getString("Nombre");
+		
+		FragmentDetails details = (FragmentDetails) getSupportFragmentManager().findFragmentById(R.id.fragment2);
+		details.actualizarCampos(nombre);
+		
+		
+		//BORRAR
+//		Cursor aCursor = LaBD.getMiBD(getApplicationContext()).seleccionarPolideportivo(nombre);
+//		if(aCursor.moveToFirst()) {
+//			do {
+//				txtNombre.setText("POLIDEPORTIVO " + aCursor.getString(0).toString());
+//				txtCalle.setText(aCursor.getString(2).toString());
+//				txtLocalidad.setText(aCursor.getString(1).toString());
+//				txtPrecio.setText(aCursor.getString(6).toString() + " €");
+//				txtDeporte.setText(aCursor.getString(3));
+//				
+//			} while(aCursor.moveToNext());
+//		}
 	}
 }
 	

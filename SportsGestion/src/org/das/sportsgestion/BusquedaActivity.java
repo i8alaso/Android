@@ -1,6 +1,5 @@
 package org.das.sportsgestion;
 
-import org.das.sportsgestion.FragmentLista.IListFragmentListener;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -70,8 +69,8 @@ public class BusquedaActivity extends Activity{
 			
 			@Override
 			public void onClick(View v) {
-				txtDeporte.setText("TENIS");
-				txtLocalidad.setText("BILBAO");
+				txtDeporte.setText("Futbol");
+				txtLocalidad.setText("Bilbao 48004");
 			}
 		});
 		
