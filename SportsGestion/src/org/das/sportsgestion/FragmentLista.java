@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
@@ -29,16 +30,19 @@ public class FragmentLista extends ListFragment {
 //		
 //		Intent inte = Intent(this, BusquedaActivity.class);
 		iLista.onItemSelected(adaptador.getItem(position));	
+		
 	}
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
+		
+		
 		datos = new ArrayList<String>();
-		datos.add("Polideportivo Indautxu \n Dr.Areilza Nº5 \n 48004 Bilbao");
-		datos.add("Polideportivo La Peña \n Zamakola Nº84 \n 48004 Bilbao");
-		datos.add("Club Deportivo Padura \n Zumalakarregi \n 48016 Arrigorriaga");
+//		datos.add("Polideportivo Indautxu \n Dr.Areilza Nº5 \n 48004 Bilbao");
+//		datos.add("Polideportivo La Peña \n Zamakola Nº84 \n 48004 Bilbao");
+//		datos.add("Club Deportivo Padura \n Zumalakarregi \n 48016 Arrigorriaga");
 		adaptador = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, datos);
 		setListAdapter(adaptador);
 	}
@@ -63,7 +67,22 @@ public class FragmentLista extends ListFragment {
 			iLista = (IListFragmentListener) activity;
 		} catch (ClassCastException e) {}
 		}
+
+	
+	public void updateList(String pLocalidad, String pDeporte) {
+		Cursor aCursor = LaBD.getMiBD(getActivity()).buscarPolideportivo(pLocalidad, pDeporte);
+		adaptador.clear();
+		String nombre;
+		
+		if(aCursor.moveToFirst()) {
+			do {
+				nombre = aCursor.getString(0);
+	//			datos.add(id + ", " + nombre);
+				adaptador.add(nombre);
+			} while(aCursor.moveToNext());
+		}
 	}
+}
 	
 	
 

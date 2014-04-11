@@ -9,6 +9,7 @@
 <!-- General -->
     <string name="Si"> Si</string>
     <string name="No"> No</string>
+    <string name="Aceptar"> Aceptar</string>
 
 <!-- Menu -->
    	<string name= "Castellano"> Castellano</string>
@@ -22,7 +23,9 @@
     <string name="MensajeSalirAplicacion"> ¿Quieres salir de la aplicación?</string>
 	<string name= "Ayuda"> Esta es la ayuda de la aplicación desarrollada por Iñigo Ochoa de Erive Lasso de la Vega
 	    para la asigantura de DAS</string>
-	    
+	<string name="Contrasenia"> Contraseña</string>
+	<string name="IdentifAdmin"> Entrar como administrador</string> 
+	<string name="GestionarPolid"> Gestionar Polideportivos</string>  
 
     
 <!-- BusquedaActivity.java -->    
@@ -32,9 +35,13 @@
     <string name="Incluido"> INCLUIDO</string>
     <string name="QueBuscas"> ¿Qué buscas?</string>
 
-<!-- BusquedaConfirmar.java -->
+<!-- BusquedaConfirmar.java (FragmentDetails) -->
     <string name="Imprimir"> IMPRIMIR TICKET</string>
     <string name="Distancia"> DISTANCIA </string> 
+    <string name="Calle"> Calle</string>
+    <string name="Localidad"> Localidad</string>
+    <string name="Precio"> Precio</string>
+    <string name="Instalaciones"> Instalaciones \npara que deporte</string>
     
 <!-- CalcularDistancia.java  -->
     <string name="MiPosicion"> MI POSICION </string>
@@ -46,7 +53,6 @@
     
     
     <string name="Usuario"> <i>Usuario</i></string>
-    <string name="Contrasenia"> <i>Contraseña</i></string>
     <string name="title_activity_busqueda">BusquedaActivity</string>
     
 <!-- BORRAR -->    
@@ -58,9 +64,8 @@
     <string name="TituloExtras"> Extras</string>
     <string name="Entradas"> ENTRADA</string>
     <string name="Duchas"> DUCHAS</string>
-    <string name="Precio"> PRECIO</string>
+
     <string name="Pagar"> PAGAR</string>
-    <string name="Entrar"> Entrar</string>
     <string name="Salir"> Salir</string>
     <string name="kDeporte"> <i>Deporte</i></string>
     <string name="kLugar"> <i>Lugar</i></string>

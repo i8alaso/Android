@@ -9,59 +9,41 @@
         android:orientation="vertical" >
 
         <Button
-            android:id="@+id/buttonDescuentos"
+            android:id="@+id/butSalir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/buttonBuscar"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:text="Descuentos" />
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:text="Salir" />
 
         <Button
-            android:id="@+id/buttonReserva"
+            android:id="@+id/butGestionPolid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/buttonDescuentos"
-            android:layout_below="@+id/buttonDescuentos"
-            android:layout_marginTop="17dp"
-            android:text="MisReservas" />
+            android:layout_below="@+id/butBuscar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="69dp"
+            android:text="@string/GestionarPolid" />
 
         <Button
             android:id="@+id/buttonCuenta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/buttonReserva"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="19dp"
+            android:layout_alignLeft="@+id/butBuscar"
+            android:layout_below="@+id/butGestionPolid"
+            android:layout_marginTop="75dp"
             android:text="MiCuenta" />
 
         <Button
-            android:id="@+id/buttonSalir"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_toRightOf="@+id/buttonReserva"
-            android:text="Salir" />
-
-        <Button
-            android:id="@+id/buttonUnirse"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/buttonBuscar"
-            android:layout_below="@+id/buttonCuenta"
-            android:layout_marginTop="22dp"
-            android:text="Unirse" />
-
-        <Button
-            android:id="@+id/buttonBuscar"
+            android:id="@+id/butBuscar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="132dp"
+            android:layout_marginTop="67dp"
             android:text="Buscar" />
 
     </RelativeLayout>
-    
 
 </ScrollView>

@@ -17,10 +17,8 @@ public class BusquedaActivity extends Activity{
 	private TextView txtView;
 	
 	private EditText txtDeporte;
-	private EditText txtProvincia;
 	private EditText txtLocalidad;
-	private EditText txtLugar;
-	private EditText Hora;
+
 	
 	private Button butBuscar;
 	private Button butRellenar;
@@ -47,20 +45,6 @@ public class BusquedaActivity extends Activity{
 			}
 		});
 		
-		txtLugar = (EditText) findViewById(R.id.edCentro);
-		txtLugar.setBackgroundColor(Color.WHITE);
-		txtLugar.setTextColor(Color.GRAY);
-		txtLugar.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				txtLugar.setText("");
-				txtLugar.setTextColor(Color.BLACK);
-				
-			}
-		});
-		
-		
 		txtLocalidad = (EditText) findViewById(R.id.edLocalidad);
 		txtLocalidad.setBackgroundColor(Color.WHITE);
 		txtLocalidad.setTextColor(Color.GRAY);
@@ -73,32 +57,7 @@ public class BusquedaActivity extends Activity{
 				
 			}
 		});
-		
-		txtProvincia = (EditText) findViewById(R.id.edProvincia);
-		txtProvincia.setBackgroundColor(Color.WHITE);
-		txtProvincia.setTextColor(Color.GRAY);
-		txtProvincia.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				txtProvincia.setText("");
-				txtProvincia.setTextColor(Color.BLACK);
-				
-			}
-		});
-		
-		Hora = (EditText) findViewById(R.id.edHora);
-		Hora.setBackgroundColor(Color.WHITE);
-		Hora.setTextColor(Color.GRAY);
-		Hora.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				Hora.setText("");
-				Hora.setTextColor(Color.BLACK);
-				
-			}
-		});
+
 		
 		butBuscar = (Button) findViewById(R.id.buttonBuscar);
 		butBuscar.setBackgroundColor(Color.DKGRAY);
@@ -112,11 +71,7 @@ public class BusquedaActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				txtDeporte.setText("TENIS");
-				txtProvincia.setText("BIZKAIA");
 				txtLocalidad.setText("BILBAO");
-				txtLugar.setText("POLIDEPORTIVO TXURDINAGA");
-				Hora.setText("16:15-17:45");
-				
 			}
 		});
 		
@@ -125,7 +80,9 @@ public class BusquedaActivity extends Activity{
 			@Override
 			public void onClick(View arg0) {
 				//if(txtProvincia.getText().toString() != null){
-					Intent i = new Intent(getApplicationContext(), ResultadoConMapa.class);
+					Intent i = new Intent(getApplicationContext(), ResultadoConLista.class);
+					i.putExtra("Localidad", txtLocalidad.getText().toString());
+					i.putExtra("Deporte", txtDeporte.getText().toString());
 					startActivity(i);
 				//}
 				

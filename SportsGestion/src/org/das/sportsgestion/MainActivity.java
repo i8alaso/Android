@@ -31,8 +31,7 @@ import android.widget.LinearLayout;
 public class MainActivity extends FragmentActivity{
 	
 	private Button btnBuscar;
-	private Button btnDescuentos;
-	private Button btnReservas;
+	private Button btnGestion;
 	private Button btnCuenta;
 	private Button btnSalir;
 	
@@ -63,7 +62,7 @@ public class MainActivity extends FragmentActivity{
 		}
 
 		
-		btnBuscar = (Button) findViewById(R.id.buttonBuscar);
+		btnBuscar = (Button) findViewById(R.id.butBuscar);
 		btnBuscar.setText(R.string.BUSCAR);
 		btnBuscar.setBackgroundColor(Color.GRAY);
 		btnBuscar.setOnClickListener(new View.OnClickListener() {
@@ -75,10 +74,11 @@ public class MainActivity extends FragmentActivity{
 			}
 		});
 		
-		btnDescuentos = (Button) findViewById(R.id.buttonDescuentos);
-		btnDescuentos.setText(R.string.DESCUENTOS);
-		btnDescuentos.setBackgroundColor(Color.GRAY);
-		btnDescuentos.setOnClickListener(new View.OnClickListener() {
+		btnGestion = (Button) findViewById(R.id.butGestionPolid);
+		btnGestion.setText(R.string.GestionarPolid);
+		btnGestion.setVisibility(View.INVISIBLE);
+		btnGestion.setBackgroundColor(Color.GRAY);
+		btnGestion.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
@@ -90,9 +90,6 @@ public class MainActivity extends FragmentActivity{
 		});
 //		butDescuentos.setBackgroundColor(Color.RED);
 		
-		btnReservas = (Button) findViewById(R.id.buttonReserva);
-		btnReservas.setText(R.string.MisReservas);
-		btnReservas.setBackgroundColor(Color.WHITE);
 		
 		btnCuenta = (Button) findViewById(R.id.buttonCuenta);
 		btnCuenta.setText(R.string.MiCuenta);
@@ -106,7 +103,7 @@ public class MainActivity extends FragmentActivity{
 			}
 		});
 		
-		btnSalir = (Button) findViewById(R.id.buttonSalir);
+		btnSalir = (Button) findViewById(R.id.butSalir);
 		btnSalir.setText(R.string.Salir);
 		btnSalir.setBackgroundColor(Color.GRAY);
 		btnSalir.setOnClickListener(new View.OnClickListener() {
@@ -204,8 +201,8 @@ public class MainActivity extends FragmentActivity{
 	private void administrador() {
 		AlertDialog.Builder adminAlert = new AlertDialog.Builder(this);
 		
-		adminAlert.setTitle("messagetitle");
-		adminAlert.setMessage("here is the message");
+		adminAlert.setTitle(R.string.IdentifAdmin);
+		adminAlert.setMessage(R.string.Contrasenia);
 		
 		final EditText input = new EditText(this);
 		LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
@@ -214,9 +211,9 @@ public class MainActivity extends FragmentActivity{
 		input.setLayoutParams(lp);
 		adminAlert.setView(input);
 		
-		adminAlert.setPositiveButton("Send via email", new DialogInterface.OnClickListener() {
+		adminAlert.setPositiveButton(R.string.Aceptar, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int whichButton) {
-				
+					btnGestion.setVisibility(View.VISIBLE);
 			}
 		});
 		

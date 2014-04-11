@@ -4,8 +4,10 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 
+
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -24,15 +26,9 @@ import android.widget.TextView;
 public class BusquedaConfirmar extends FragmentActivity {
 	
 	private TextView txtDeporte;
-	private TextView tDeporte;
-	private TextView txtHora;
-	private TextView tHora;
-	private TextView txtIncluido;
-	private TextView tIncluido;
-	private TextView txtLugar;
-	private TextView tLugar;
-	private TextView txtDescripcion;
-	private TextView tPrecio;
+	private TextView txtCalle;
+	private TextView txtLocalidad;
+	private TextView txtPrecio;
 	
 	private Button butDistancia;
 	private Button butPagar;
@@ -43,19 +39,13 @@ public class BusquedaConfirmar extends FragmentActivity {
 		
 		setContentView(R.layout.activity_main_busquedaconfirmar);
 		
-		tDeporte = (TextView) findViewById(R.id.tDeporte);
-		tDeporte.setText("TENIS                     ");
-		tDeporte.setBackgroundColor(Color.LTGRAY);
-		tDeporte.setTextColor(Color.WHITE);
-		tHora = (TextView) findViewById(R.id.tHora);
-		tHora.setText("16:15-17:15");
-		tHora.setBackgroundColor(Color.GRAY);
-		tIncluido = (TextView) findViewById(R.id.tIncluido);
-		tIncluido.setText("ENTRADAS \n DUCHAS \n LUZ");
-//		tLugar = (TextView) findViewById(R.id.tLugar);
-//		tLugar.setText("CLUB DE TENIS");
-		tPrecio = (TextView) findViewById(R.id.tPrecio);
-		tPrecio.setText("5,50" + "€");
+		txtDeporte = (TextView) findViewById(R.id.txtInstalaciones);
+		txtDeporte.setBackgroundColor(Color.LTGRAY);
+		txtDeporte.setTextColor(Color.WHITE);
+		txtCalle = (TextView) findViewById(R.id.txtCalle);
+		txtCalle.setBackgroundColor(Color.GRAY);
+		txtPrecio = (TextView) findViewById(R.id.txtPrecio);
+
 		
 		
 		butDistancia = (Button) findViewById(R.id.butDistancia);
@@ -73,30 +63,34 @@ public class BusquedaConfirmar extends FragmentActivity {
 			
 			@Override
 			public void onClick(View v) {
+				Intent intentTicket = new Intent();
+				PendingIntent intentEnNoti = PendingIntent.getActivity(getApplicationContext(), 0, intentTicket, PendingIntent.FLAG_CANCEL_CURRENT);
+				PendingIntent intentNO = PendingIntent.getActivity(getApplicationContext(), 0, new Intent(), PendingIntent.FLAG_CANCEL_CURRENT);
+				
+				NotificationCompat.Builder aBuilder = new NotificationCompat.Builder(BusquedaConfirmar.this);
+				
 //				Intent intentTicket = new Intent();
 //				
 //				PendingIntent intentEnNoti = PendingIntent.getActivity(this, 0, intentTicket, PendingIntent.FLAG_NO_CREATE);
 //				//PendingIntent intentNO = PendingIntent.getActivity(this, 0, new Intent(), PendingIntent.FLAG_CANCEL_CURRENT);
 //				
-//				NotificationCompat.Builder aBuilder = new NotificationCompat.Builder(BusquedaConfirmar.this);
-//				aBuilder.setSmallIcon(android.R.drawable.stat_notify_missed_call);
-//				//aBuilder.setLargeIcon(((BitmapDrawable)getResources().getDrawable(R.drawable.onin)).getBitmap());
-//				aBuilder.setContentTitle("Pincha si quieres el ticket");
-//				aBuilder.setTicker("¿Quieres el ticket?");
-//				aBuilder.setContentIntent(intentEnNoti);
-//				//aBuilder.setDefaults(Notification.DEFAULT_ALL);
-//				//aBuilder.setDefaults(Notification.DEFAULT_LIGHTS);
 //				
-//				aBuilder.setLights(0xFF0000FF,100,100);
-////				aBuilder.setPriority(Notification.PRIORITY_DEFAULT);
-//
-//				aBuilder.addAction(R.drawable.tick, "SÍ", intentEnNoti);
-//				aBuilder.addAction(R.drawable.x, "NO", intentNO);
+				aBuilder.setSmallIcon(android.R.drawable.stat_notify_missed_call);
+				//aBuilder.setLargeIcon(((BitmapDrawable)getResources().getDrawable(R.drawable.onin)).getBitmap());
+				aBuilder.setContentTitle("Pincha si quieres el ticket");
+				aBuilder.setTicker("¿Quieres el ticket?");
+				aBuilder.setContentIntent(intentEnNoti);
+				aBuilder.setDefaults(Notification.DEFAULT_ALL);
+
+
+				aBuilder.addAction(R.drawable.tick, "SÍ", intentEnNoti);
+				aBuilder.addAction(R.drawable.x, "NO", intentNO);
 //				
 //				//Sobra
 //				//getApplicationContext();		
-//				NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-//				mNotificationManager.notify(1,aBuilder.build());
+				NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+				mNotificationManager.notify(1,aBuilder.build());
+				aBuilder.setAutoCancel(true);
 //				
 			}
 		});
