@@ -50,6 +50,16 @@
             android:name="org.das.sportsgestion.CalcularDistancia"
             android:label="@string/app_name" >
         </activity>  
+        
+        <activity
+            android:name="org.das.sportsgestion.MenuGestionar"
+            android:label="@string/app_name" >
+        </activity>  
+        
+      	<activity
+            android:name="org.das.sportsgestion.AdminInsertar"
+            android:label="@string/app_name" >
+        </activity>  
     </application>
 
 

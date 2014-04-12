@@ -22,11 +22,13 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.support.v4.app.FragmentActivity;
+import android.text.InputType;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity{
 	
@@ -82,14 +84,12 @@ public class MainActivity extends FragmentActivity{
 			
 			@Override
 			public void onClick(View v) {
-				MainActivity.this.finish();
-				idioma("eu");
+				Intent intAdmin = new Intent(MainActivity.this, MenuGestionar.class);
+				startActivity(intAdmin);
 				
 				
 			}
 		});
-//		butDescuentos.setBackgroundColor(Color.RED);
-		
 		
 		btnCuenta = (Button) findViewById(R.id.buttonCuenta);
 		btnCuenta.setText(R.string.MiCuenta);
@@ -174,8 +174,6 @@ public class MainActivity extends FragmentActivity{
 	}
 
 	
-
-
 	private void idioma(String pIdioma){
 		MainActivity.this.finish();
 		Intent intLang = new Intent(getApplicationContext(), MainActivity.class);
@@ -202,18 +200,32 @@ public class MainActivity extends FragmentActivity{
 		AlertDialog.Builder adminAlert = new AlertDialog.Builder(this);
 		
 		adminAlert.setTitle(R.string.IdentifAdmin);
-		adminAlert.setMessage(R.string.Contrasenia);
+		adminAlert.setMessage(R.string.Contrasena);
 		
 		final EditText input = new EditText(this);
+
+		
 		LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
 				LinearLayout.LayoutParams.FILL_PARENT,
 				LinearLayout.LayoutParams.FILL_PARENT);
 		input.setLayoutParams(lp);
+		input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+		
+		//Quitar luego, ahora para ganar tiempo
+		input.setText("admin");
+		
+		
 		adminAlert.setView(input);
 		
 		adminAlert.setPositiveButton(R.string.Aceptar, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int whichButton) {
+				
+				if(input.getText().toString().equals("admin")){
 					btnGestion.setVisibility(View.VISIBLE);
+				}
+				else{
+					Toast.makeText(getBaseContext(), "LA CONTRASEÑA ES INCORRECTA", Toast.LENGTH_LONG).show();
+				}
 			}
 		});
 		

@@ -83,6 +83,20 @@ public class FragmentLista extends ListFragment {
 		}
 		return nombre;
 	}
+	
+	public void mostrarTodos(){
+		Cursor aCursor = LaBD.getMiBD(getActivity()).seleccionarPolideportivo(null);
+		adaptador.clear();
+		String nombre = "";
+		
+		if(aCursor.moveToFirst()) {
+			do {
+				nombre = aCursor.getString(0);
+	//			datos.add(id + ", " + nombre);
+				adaptador.add("POLIDEPORTIVO " + nombre);
+			} while(aCursor.moveToNext());
+		}
+	}
 }
 	
 	

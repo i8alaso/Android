@@ -34,7 +34,8 @@
 		            
 		            <item android:id="@+id/menu_admin"
 		                  android:showAsAction="always"
-		                  android:title="@string/Administrador"/>
+		                  android:title="@string/Administrador"
+		                  android:icon="@android:drawable/ic_secure"/>
 		            
 			        </menu>
 				</item>
@@ -44,11 +45,8 @@
 			android:showAsAction="always"
 			android:icon="@android:drawable/ic_menu_help"
 			android:title="Ayuda"/>
-	<!--  	<item
-			android:id="@+id/Anadir"
-			android:showAsAction="ifRoom|withText"
-			android:icon="@android:drawable/ic_menu_add"
-			android:title="Anadir"/>-->
+
+		
 		<item 
 		    android:id="@+id/Eliminar"
 		    android:showAsAction="never"

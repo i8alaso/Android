@@ -23,7 +23,7 @@
     <string name="MensajeSalirAplicacion"> ¿Quieres salir de la aplicación?</string>
 	<string name= "Ayuda"> Esta es la ayuda de la aplicación desarrollada por Iñigo Ochoa de Erive Lasso de la Vega
 	    para la asigantura de DAS</string>
-	<string name="Contrasenia"> Contraseña</string>
+	<string name="Contrasena"> Escriba la contraseña de administrador: </string>
 	<string name="IdentifAdmin"> Entrar como administrador</string> 
 	<string name="GestionarPolid"> Gestionar Polideportivos</string>  
 
@@ -41,17 +41,20 @@
     <string name="Nombre"> NOMBRE</string>
     <string name="Calle"> CALLE</string>
     <string name="Localidad"> LOCALIDAD</string>
-    <string name="Precio"> Precio</string>
+    <string name="Precio"> PRECIO</string>
     <string name="Instalaciones"> Instalaciones \npara que deporte</string>
     
 <!-- CalcularDistancia.java  -->
     <string name="MiPosicion"> MI POSICION </string>
     <string name="Calcular"> CALCULAR DISTANCIA </string>
-    <string name="Longitud"> Longitud</string>
-    <string name="Latitud"> Latitud </string>
+    <string name="Longitud"> LONGITUD</string>
+    <string name="Latitud"> LATITUD </string>
     
-    
-    
+<!-- MenuAdministrador -->
+	<string name="Modificar"> MODIFICAR</string>
+	<string name="Borrar"> BORRAR</string>
+    <string name="BorrarTodo"> BORRAR TODOS</string>
+    <string name="Insertar"> INSERTAR</string>    
     
     <string name="Usuario"> <i>Usuario</i></string>
     <string name="title_activity_busqueda">BusquedaActivity</string>

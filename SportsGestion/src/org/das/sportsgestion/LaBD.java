@@ -29,8 +29,9 @@ public class LaBD extends SQLiteOpenHelper{
 		db.execSQL("CREATE TABLE Polideportivos ('Nombre' TEXT PRIMARY KEY,'Localidad' TEXT, 'Calle' TEXT, 'Deporte' TEXT, 'Latitud' DOUBLE, 'Longitud' DOUBLE, 'Precio' DOUBLE)");
 		db.execSQL("CREATE TABLE Coche ('Codigo' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'Nombre' TEXT)");
 		
-		db.execSQL("INSERT INTO 'Polideportivos' (Nombre, Localidad, Calle, Deporte, Precio) values ('TXURDINAGA', 'Bilbao 48004', 'c/ Radio', 'Futbol', 5.54)" );
+		db.execSQL("INSERT INTO 'Polideportivos' (Nombre, Localidad, Calle, Deporte, Precio) values ('TXURDINAGA', 'Bilbao', 'c/ Radio', 'Futbol', 5.54)" );
 		db.execSQL("INSERT INTO 'Polideportivos' (Nombre, Localidad, Calle, Deporte) values ('FANGO REKALDE', 'Bilbao', '', 'Futbol')" );
+		db.execSQL("INSERT INTO 'Polideportivos' (Nombre, Localidad, Calle, Deporte) values ('FANGO', 'Bilbao', '', 'Futbol')" );
 		
 		
 	}
@@ -43,7 +44,13 @@ public class LaBD extends SQLiteOpenHelper{
 	
 	public void insertarPolideportivo(String pNombre, String pLocalidad, String pCalle, String pDeporte, Double pLongitud, Double pLatitud, Double pPrecio){
 		String sql = "INSERT INTO 'Polideportivos' (Nombre, Localidad, Calle, Deporte, Latitud, Longitud, Precio) VALUES ('" + pNombre +"','"
-					+ pLocalidad + "', '" + pCalle + "'," + "', '" + pDeporte + "'," + pLatitud + ","+ pLongitud + ","+ pPrecio +")";
+					+ pLocalidad + "', '" + pCalle + "','" + pDeporte + "'," + pLatitud + ","+ pLongitud + ","+ pPrecio +")";
+		this.db.execSQL(sql);
+	}
+	
+	public void modificarPolideportivo(String pClave, String pNombre, String pLocalidad, String pCalle, String pDeporte, Double pLongitud, Double pLatitud, Double pPrecio){
+		String sql = "UPDATE 'Polideportivos' SET Nombre =" + pNombre + ", Localidad="+ pLocalidad +", Calle =" + pCalle + ", Deporte = "+ pDeporte +
+				", Latitud=" + pLatitud + ", Longitud=" + pLongitud + ", Precio = " + pPrecio + "WHERE Nombre = '" + pClave +"'";
 		this.db.execSQL(sql);
 	}
 	
@@ -55,7 +62,11 @@ public class LaBD extends SQLiteOpenHelper{
 	}
 	
 	public Cursor seleccionarPolideportivo(String pNombre){
-		String sql = "SELECT * FROM Polideportivos WHERE Nombre = '" + pNombre + "'";
+		String sql = "SELECT * FROM Polideportivos";
+
+		if(pNombre != null){
+			sql = "SELECT * FROM Polideportivos WHERE Nombre = '" + pNombre + "'";			
+		}
 		return db.rawQuery(sql, null);
 	}
 	
@@ -68,7 +79,7 @@ public class LaBD extends SQLiteOpenHelper{
 	}
 	
 	public void eliminarTodo(){
-		String sql = "DELETE * FROM Polideportivos";
+		String sql = "DELETE FROM Polideportivos";
 		this.db.execSQL(sql);
 	}
 }
