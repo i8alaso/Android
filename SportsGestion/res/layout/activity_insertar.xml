@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <EditText
+        android:id="@+id/edInsLocalidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtInsLocalidad"
+        android:layout_alignBottom="@+id/txtInsLocalidad"
+        android:layout_alignLeft="@+id/edInsDeporte"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/edInsDeporte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtInsDeporte"
+        android:layout_alignBottom="@+id/txtInsDeporte"
+        android:layout_alignLeft="@+id/edInsLongitud"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/edInsCalle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtInsCalle"
+        android:layout_alignBottom="@+id/txtInsCalle"
+        android:layout_alignLeft="@+id/edInsLocalidad"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/edInsNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtInsNombre"
+        android:layout_alignBottom="@+id/txtInsNombre"
+        android:layout_alignLeft="@+id/edInsCalle"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/edInsPrecio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/txtInsPrecio"
+        android:layout_alignLeft="@+id/edInsLongitud"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/txtInsPrecio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/butInsGuardar"
+        android:layout_alignLeft="@+id/txtInsNombre"
+        android:layout_marginBottom="41dp"
+        android:text="@string/Precio" />
+
+    <TextView
+        android:id="@+id/txtInsLatitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edInsPrecio"
+        android:layout_alignRight="@+id/txtInsPrecio"
+        android:layout_marginBottom="31dp"
+        android:text="@string/Latitud" />
+
+    <EditText
+        android:id="@+id/edInsLatitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtInsLatitud"
+        android:layout_alignBottom="@+id/txtInsLatitud"
+        android:layout_alignLeft="@+id/edInsPrecio"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/txtInsLongitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edInsLatitud"
+        android:layout_alignLeft="@+id/txtInsDeporte"
+        android:layout_marginBottom="27dp"
+        android:text="@string/Longitud" />
+
+    <TextView
+        android:id="@+id/txtInsNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="41dp"
+        android:text="@string/Nombre" />
+
+    <TextView
+        android:id="@+id/txtInsDeporte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtInsLongitud"
+        android:layout_alignLeft="@+id/txtInsLatitud"
+        android:layout_marginBottom="51dp"
+        android:text="@string/Deporte" />
+
+    <EditText
+        android:id="@+id/edInsLongitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/butInsGuardar"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/txtInsCalle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edInsLocalidad"
+        android:layout_alignLeft="@+id/txtInsLocalidad"
+        android:layout_marginBottom="22dp"
+        android:text="@string/Calle" />
+
+    <TextView
+        android:id="@+id/txtInsLocalidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edInsDeporte"
+        android:layout_alignLeft="@+id/txtInsDeporte"
+        android:layout_marginBottom="28dp"
+        android:text="@string/Localidad" />
+
+    <Button
+        android:id="@+id/butInsGuardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="43dp"
+        android:layout_toRightOf="@+id/txtInsLocalidad"
+        android:text="@string/Aceptar" />
+
+    <Button
+        android:id="@+id/butInsModificar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/butInsGuardar"
+        android:layout_alignRight="@+id/edInsPrecio"
+        android:layout_marginRight="12dp"
+        android:text="@string/Modificar" />
+
+</RelativeLayout>

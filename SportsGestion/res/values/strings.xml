@@ -25,7 +25,7 @@
 	    para la asigantura de DAS</string>
 	<string name="Contrasena"> Escriba la contraseña de administrador: </string>
 	<string name="IdentifAdmin"> Entrar como administrador</string> 
-	<string name="GestionarPolid"> Gestionar Polideportivos</string>  
+	<string name="GestionarPolid"> GESTIONAR POLIDEPORTIVOS</string>  
 
     
 <!-- BusquedaActivity.java -->    
@@ -43,20 +43,37 @@
     <string name="Localidad"> LOCALIDAD</string>
     <string name="Precio"> PRECIO</string>
     <string name="Instalaciones"> Instalaciones \npara que deporte</string>
+    <string name="Ticket"> ¿Quiere imprimir su ticket?</string>
+    <string name="TicketImprimido"> Ticket Imprimido</string>
+    <string name="TicketImprOk"> Su ticket se ha imprimido correctamente</string>
+    <string name="TicketNo"> GRACIAS POR SU COLABORACIÓN.</string>
+    
     
 <!-- CalcularDistancia.java  -->
     <string name="MiPosicion"> MI POSICION </string>
     <string name="Calcular"> CALCULAR DISTANCIA </string>
     <string name="Longitud"> LONGITUD</string>
     <string name="Latitud"> LATITUD </string>
+    <string name="NoCoordenadas"> No hay coordenadas</string>
     
 <!-- MenuAdministrador -->
 	<string name="Modificar"> MODIFICAR</string>
 	<string name="Borrar"> BORRAR</string>
     <string name="BorrarTodo"> BORRAR TODOS</string>
-    <string name="Insertar"> INSERTAR</string>    
+    <string name="Insertar"> INSERTAR</string>  
+    <string name="BorrarPolideportivo"> "Borrar Polideportivo"</string> 
+    <string name="ModificarPolideportivo"> "Modificar Polideportivo"</string>  
+	<string name="MensajeCualBorrar"> "Escriba cuál es el polideportivo que quiere borrar:"</string>
+	<string name="MensajeCualModificar"> "Escriba cuál es el polideportivo que quiere modificar:"</string>
     
+<!-- AdminInsertar -->
+	<string name= "MensajeInsercion"> LA INSERCIÓN SE HA HECHO CORRECTAMENTE</string>
+    <string name= "MensajeModificacion"> LA MODIFICACIÓN SE HA HECHO CORRECTAMENTE</string>
+
+
+
     <string name="Usuario"> <i>Usuario</i></string>
+    
     <string name="title_activity_busqueda">BusquedaActivity</string>
     
 <!-- BORRAR -->    

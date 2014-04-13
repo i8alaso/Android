@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <RelativeLayout
+	 xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+        	    <Button
+        	        android:id="@+id/butModificar"
+        	        android:layout_width="wrap_content"
+        	        android:layout_height="wrap_content"
+        	        android:layout_alignParentTop="true"
+        	        android:layout_centerHorizontal="true"
+        	        android:layout_marginTop="76dp"
+        	        android:text="@string/Modificar" />
+
+        	    <Button
+        	        android:id="@+id/butBorrar"
+        	        android:layout_width="wrap_content"
+        	        android:layout_height="wrap_content"
+        	        android:layout_below="@+id/butModificar"
+        	        android:layout_centerHorizontal="true"
+        	        android:layout_marginTop="18dp"
+        	        android:text="@string/Borrar" />
+
+        	    <Button
+        	        android:id="@+id/butBorrarTodo"
+        	        android:layout_width="wrap_content"
+        	        android:layout_height="wrap_content"
+        	        android:layout_below="@+id/butBorrar"
+        	        android:layout_centerHorizontal="true"
+        	        android:layout_marginTop="11dp"
+        	        android:text="@string/BorrarTodo" />
+
+        	    <Button
+        	        android:id="@+id/butInsertar"
+        	        android:layout_width="wrap_content"
+        	        android:layout_height="wrap_content"
+        	        android:layout_alignParentTop="true"
+        	        android:layout_centerHorizontal="true"
+        	        android:layout_marginTop="11dp"
+        	        android:text="@string/Insertar" />
+        
+    </RelativeLayout>
+    
+
+

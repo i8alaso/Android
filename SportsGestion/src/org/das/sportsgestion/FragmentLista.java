@@ -68,6 +68,9 @@ public class FragmentLista extends ListFragment {
 		} catch (ClassCastException e) {}
 		}
 
+
+	// Busca todos los polideportivos que tengan como localidad y deporte pLocalidad y pDeporte
+	// Devuelve los nombres de los 
 	
 	public String updateList(String pLocalidad, String pDeporte) {
 		Cursor aCursor = LaBD.getMiBD(getActivity()).buscarPolideportivo(pLocalidad, pDeporte);

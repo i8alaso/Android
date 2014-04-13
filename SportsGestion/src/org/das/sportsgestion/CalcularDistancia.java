@@ -4,6 +4,7 @@ import java.security.Provider;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -52,27 +53,61 @@ public class CalcularDistancia extends Activity{
 				}
 				else{
 					Location pos = managerGPS.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-					String msg ="No hay coordenadas";
 					
 					if(pos != null){
 						edLatitud.setText(String.valueOf(pos.getLatitude()));
 						edLongitud.setText(String.valueOf(pos.getLongitude()));
 					}
 					else{
-						txtDistancia.setText("No hay coordenadas");
+						txtDistancia.setText(R.string.NoCoordenadas);
 					}
 					
-				}
-				
-				
-				
+				}			
 			}
 		});
 		
 		butCalcular = (Button) findViewById(R.id.butCalcular);
+		butCalcular.setOnClickListener(new View.OnClickListener() {
 			
+			@Override
+			public void onClick(View v) {
+				txtDistancia.setText(calcularDistancia());
+			}
+		});
+		
+	}
+	
+	private String calcularDistancia(){
+		//String nombre = getIntent().getExtras().getString("Nombre");
+		
+		// Para probar si calcula la distancia bien
+		String nombre = "DISTANCIA";
 		
 		
+		Float distanciaTotal;
+		Double longitud = 0.0; 
+		Double latitud = 0.0;
+		Location localizPersona, localizPolidep;
+		
+		Cursor aCursor = LaBD.getMiBD(getApplicationContext()).seleccionarPolideportivo(nombre);
+		if(aCursor.moveToFirst()) {
+			do {
+				longitud = aCursor.getDouble(4);
+				latitud = aCursor.getDouble(5);		
+			} while(aCursor.moveToNext());
+		}
+		
+		localizPersona = new Location ("Pers");
+		localizPersona.setLatitude(Double.parseDouble(edLatitud.getText().toString()));
+		localizPersona.setLongitude(Double.parseDouble(edLongitud.getText().toString()));
+		
+		localizPolidep = new Location ("Poli");
+		localizPolidep.setLatitude(latitud);
+		localizPolidep.setLongitude(longitud);
+		
+		distanciaTotal = localizPolidep.distanceTo(localizPersona);
+
+		return distanciaTotal.toString();
 	}
 	
 

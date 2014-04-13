@@ -49,8 +49,8 @@ public class LaBD extends SQLiteOpenHelper{
 	}
 	
 	public void modificarPolideportivo(String pClave, String pNombre, String pLocalidad, String pCalle, String pDeporte, Double pLongitud, Double pLatitud, Double pPrecio){
-		String sql = "UPDATE 'Polideportivos' SET Nombre =" + pNombre + ", Localidad="+ pLocalidad +", Calle =" + pCalle + ", Deporte = "+ pDeporte +
-				", Latitud=" + pLatitud + ", Longitud=" + pLongitud + ", Precio = " + pPrecio + "WHERE Nombre = '" + pClave +"'";
+		String sql = "UPDATE 'Polideportivos' SET Nombre = '" + pNombre + "', Localidad='"+ pLocalidad +"', Calle ='" + pCalle + "', Deporte = '"+ pDeporte +
+				"', Latitud=" + pLatitud + ", Longitud=" + pLongitud + ", Precio = " + pPrecio + " WHERE Nombre = '" + pClave +"'";
 		this.db.execSQL(sql);
 	}
 	
@@ -81,5 +81,11 @@ public class LaBD extends SQLiteOpenHelper{
 	public void eliminarTodo(){
 		String sql = "DELETE FROM Polideportivos";
 		this.db.execSQL(sql);
+	}
+
+	public void obtenerCoordenadas(String pNombre) {
+		String sql = "SELECT Longitud,Latitud FROM Polideportivos WHERE Nombre = '" + pNombre + "'";
+		this.db.execSQL(sql);
+		
 	}
 }

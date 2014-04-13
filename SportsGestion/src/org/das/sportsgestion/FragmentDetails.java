@@ -55,7 +55,7 @@ public class FragmentDetails extends Fragment{
 				txtNombre.setText("POLIDEPORTIVO " + aCursor.getString(0).toString());
 				txtCalle.setText(aCursor.getString(2).toString());
 				txtLocalidad.setText(aCursor.getString(1).toString());
-				txtPrecio.setText(aCursor.getString(6).toString() + " €");
+				txtPrecio.setText(Double.toString(aCursor.getDouble(6)) + " €");
 				txtDeporte.setText(aCursor.getString(3));
 				
 			} while(aCursor.moveToNext());

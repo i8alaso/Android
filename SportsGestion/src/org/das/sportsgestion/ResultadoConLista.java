@@ -25,6 +25,8 @@ public class ResultadoConLista extends FragmentActivity implements IListFragment
 		setContentView(R.layout.activity_mainbusqueda_lista);
 		mWindowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
 		mDisplay = mWindowManager.getDefaultDisplay();
+		
+		// Para que se muestren los polideportivos en el f1
 		actualizarLista();
 		
 	}
@@ -33,12 +35,14 @@ public class ResultadoConLista extends FragmentActivity implements IListFragment
 	public void onItemSelected(String item) {
 		
 		if(mDisplay.getRotation() != Surface.ROTATION_0 && mDisplay.getRotation() != Surface.ROTATION_180) {
-		
 				FragmentDetails details = (FragmentDetails) getSupportFragmentManager().findFragmentById(R.id.fragment2);
 				details.actualizarCampos(nombre);
 				
 		} else {
+			
+			//Como el movil está en vertical llamamos a la siguiente actividad para mostrar los detalles
 			Intent intConf = new Intent(ResultadoConLista.this, BusquedaConfirmar.class);
+			
 			intConf.putExtra("Nombre", nombre);
 			startActivity(intConf);
 		}
@@ -46,9 +50,11 @@ public class ResultadoConLista extends FragmentActivity implements IListFragment
 
 	private void actualizarLista() {
 		
+		// Obtenemos la localidad y el deporte que hemos introducido en la busqueda anterior
 		localidad = getIntent().getExtras().getString("Localidad");
 		deporte = getIntent().getExtras().getString("Deporte");
 		
+		// 
 		FragmentLista listaPolid = (FragmentLista) getSupportFragmentManager().findFragmentById(R.id.fragment1);
 		nombre = listaPolid.updateList(localidad, deporte);
 			

@@ -70,7 +70,7 @@ public class BusquedaActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				txtDeporte.setText("Futbol");
-				txtLocalidad.setText("Bilbao 48004");
+				txtLocalidad.setText("Bilbao");
 			}
 		});
 		
