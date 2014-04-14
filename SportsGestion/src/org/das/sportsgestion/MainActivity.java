@@ -49,10 +49,8 @@ public class MainActivity extends FragmentActivity{
 
 		Bundle extras = getIntent().getExtras();
 
+		//Comprobamos que exista extras para poder asignarle la configuración del idioma
 		if(extras != null){
-//			String idioma = savedInstanceState.getString("eu");
-//			int valor = savedInstanceState.getInt("eu"); 
-			
 			String leng = extras.getString("Lenguaje");
 
 			Locale nuevaloc = new Locale(leng);
@@ -205,8 +203,7 @@ public class MainActivity extends FragmentActivity{
 		final EditText input = new EditText(this);
 
 		
-		LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
-				LinearLayout.LayoutParams.FILL_PARENT,
+		LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT,
 				LinearLayout.LayoutParams.FILL_PARENT);
 		input.setLayoutParams(lp);
 		input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
@@ -218,18 +215,22 @@ public class MainActivity extends FragmentActivity{
 		adminAlert.setView(input);
 		
 		adminAlert.setPositiveButton(R.string.Aceptar, new DialogInterface.OnClickListener() {
+			
 			public void onClick(DialogInterface dialog, int whichButton) {
 				
-				if(input.getText().toString().equals("admin")){
-					btnGestion.setVisibility(View.VISIBLE);
+				if(!input.getText().toString().equals("")){
+					if(input.getText().toString().equals("admin")){
+						btnGestion.setVisibility(View.VISIBLE);
+					}
+					else{
+						Toast.makeText(getBaseContext(), "LA CONTRASEÑA ES INCORRECTA", Toast.LENGTH_LONG).show();
+					}	
 				}
 				else{
-					Toast.makeText(getBaseContext(), "LA CONTRASEÑA ES INCORRECTA", Toast.LENGTH_LONG).show();
+					Toast.makeText(getBaseContext(), "INSERTE LA CONTRASEÑA", Toast.LENGTH_LONG).show();
 				}
 			}
 		});
-		
-		
 		adminAlert.show();
 		
 	}

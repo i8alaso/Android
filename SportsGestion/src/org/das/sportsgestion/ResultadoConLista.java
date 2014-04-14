@@ -10,6 +10,7 @@ import android.view.Display;
 import android.view.Surface;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 public class ResultadoConLista extends FragmentActivity implements IListFragmentListener {
 
@@ -31,33 +32,47 @@ public class ResultadoConLista extends FragmentActivity implements IListFragment
 		
 	}
 
+	/**
+	 * Comprueba la orientación del móvil
+	 * 	Si está en horizontal se actualiza los detalles del polideportivo
+	 * 	Si está en vertical se crea una nueva actividad con los detalles del polideportivo
+	 * 
+	 * @return void
+	 */
+	
 	@Override
 	public void onItemSelected(String item) {
-		
+		String nombrePolid = item.substring(14);
+
+		//Como
 		if(mDisplay.getRotation() != Surface.ROTATION_0 && mDisplay.getRotation() != Surface.ROTATION_180) {
 				FragmentDetails details = (FragmentDetails) getSupportFragmentManager().findFragmentById(R.id.fragment2);
-				details.actualizarCampos(nombre);
+				details.actualizarCampos(nombrePolid);
 				
 		} else {
-			
-			//Como el movil está en vertical llamamos a la siguiente actividad para mostrar los detalles
-			Intent intConf = new Intent(ResultadoConLista.this, BusquedaConfirmar.class);
-			
-			intConf.putExtra("Nombre", nombre);
-			startActivity(intConf);
+				Intent intConf = new Intent(ResultadoConLista.this, BusquedaConfirmar.class);
+				intConf.putExtra("Nombre", nombrePolid);
+				startActivity(intConf);
 		}
 	}
 
+	
+	/**
+	 * Actualiza los polideportivos que cumplan con la busqueda que se ha hecho en la actividad anterior
+	 * 	Por ello obtenemos la localidad y el deporte insertado anteriormente
+	 * 
+	 * @return void
+	 */
+	
 	private void actualizarLista() {
 		
-		// Obtenemos la localidad y el deporte que hemos introducido en la busqueda anterior
 		localidad = getIntent().getExtras().getString("Localidad");
 		deporte = getIntent().getExtras().getString("Deporte");
-		
-		// 
+
 		FragmentLista listaPolid = (FragmentLista) getSupportFragmentManager().findFragmentById(R.id.fragment1);
-		nombre = listaPolid.updateList(localidad, deporte);
+		listaPolid.updateList(localidad, deporte);
 			
 	}
+	
 
 }

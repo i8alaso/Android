@@ -27,28 +27,21 @@ public class FragmentLista extends ListFragment {
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
-//		
-//		Intent inte = Intent(this, BusquedaActivity.class);
-		iLista.onItemSelected(adaptador.getItem(position));	
+
+		iLista.onItemSelected(adaptador.getItem(position).toString());	
 		
 	}
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
-		
-		
+			
 		datos = new ArrayList<String>();
-//		datos.add("Polideportivo Indautxu \n Dr.Areilza Nº5 \n 48004 Bilbao");
-//		datos.add("Polideportivo La Peña \n Zamakola Nº84 \n 48004 Bilbao");
-//		datos.add("Club Deportivo Padura \n Zumalakarregi \n 48016 Arrigorriaga");
 		adaptador = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, datos);
 		setListAdapter(adaptador);
 	}
 
-	
-	
+		
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -56,8 +49,6 @@ public class FragmentLista extends ListFragment {
 		return inflater.inflate(R.layout.fragment_fragmentolista, container, false);
 	}
 	
-
-
 
 	@Override
 	public void onAttach(Activity activity) {
@@ -69,10 +60,13 @@ public class FragmentLista extends ListFragment {
 		}
 
 
-	// Busca todos los polideportivos que tengan como localidad y deporte pLocalidad y pDeporte
-	// Devuelve los nombres de los 
+	/**
+	 * Busca todos los polideportivos que tengan como localidad y deporte pLocalidad y pDeporte
+	 * 
+	 * @return void
+	 */
 	
-	public String updateList(String pLocalidad, String pDeporte) {
+	public void updateList(String pLocalidad, String pDeporte) {
 		Cursor aCursor = LaBD.getMiBD(getActivity()).buscarPolideportivo(pLocalidad, pDeporte);
 		adaptador.clear();
 		String nombre = "";
@@ -80,12 +74,17 @@ public class FragmentLista extends ListFragment {
 		if(aCursor.moveToFirst()) {
 			do {
 				nombre = aCursor.getString(0);
-	//			datos.add(id + ", " + nombre);
 				adaptador.add("POLIDEPORTIVO " + nombre);
 			} while(aCursor.moveToNext());
 		}
-		return nombre;
 	}
+	
+	
+	/**
+	 * Busca todos los polideportivos que estén en la BD
+	 * 
+	 * @return void
+	 */
 	
 	public void mostrarTodos(){
 		Cursor aCursor = LaBD.getMiBD(getActivity()).seleccionarPolideportivo(null);
@@ -95,7 +94,6 @@ public class FragmentLista extends ListFragment {
 		if(aCursor.moveToFirst()) {
 			do {
 				nombre = aCursor.getString(0);
-	//			datos.add(id + ", " + nombre);
 				adaptador.add("POLIDEPORTIVO " + nombre);
 			} while(aCursor.moveToNext());
 		}

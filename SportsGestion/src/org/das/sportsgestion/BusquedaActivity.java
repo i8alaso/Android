@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,12 +14,9 @@ public class BusquedaActivity extends Activity{
 	
 	private TextView txtView;
 	
-	private EditText txtDeporte;
-	private EditText txtLocalidad;
+	private EditText txtDeporte, txtLocalidad;
 
-	
-	private Button butBuscar;
-	private Button butRellenar;
+	private Button butBuscar, butRellenar;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +35,7 @@ public class BusquedaActivity extends Activity{
 			@Override
 			public void onClick(View arg0) {
 				txtDeporte.setText("");
-				txtDeporte.setTextColor(Color.BLACK);
-				
+				txtDeporte.setTextColor(Color.BLACK);	
 			}
 		});
 		
@@ -88,14 +83,4 @@ public class BusquedaActivity extends Activity{
 			}
 		});
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		//getMenuInflater().inflate(R.menu.busqueda, menu);
-		return true;
-	}
-
-
-
 }

@@ -17,7 +17,6 @@ public class AdminInsertar extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_insertar);
 		
@@ -39,18 +38,22 @@ public class AdminInsertar extends Activity {
 			butAceptar.setVisibility(View.INVISIBLE);
 		}
 		
-			
+		/**
+		 * 	
+		 */
 		butAceptar.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				
 				inicializarDatos();
 				insertarPolideportivo(nombre, localidad, calle, deporte, longitud, latitud, precio);
 				Toast.makeText(getApplicationContext(), R.string.MensajeInsercion, 5000).show();
 				AdminInsertar.this.finish();				
 			}
 
+			/**
+			 * Llama a la BD para insertar el nuevo polideportivo	
+			 */
 			private void insertarPolideportivo(String pNombre, String pLocalidad, String pCalle, String pDeporte, Double pLongitud, Double pLatitud, Double pPrecio) {
 				
 				LaBD.getMiBD(getApplicationContext()).insertarPolideportivo(pNombre, pLocalidad, pCalle, pDeporte, pLongitud, pLatitud, pPrecio);;
@@ -69,7 +72,10 @@ public class AdminInsertar extends Activity {
 				AdminInsertar.this.finish();
 				
 			}
-
+			
+			/**
+			 * Llama a la BD para que modifique  	
+			 */
 			private void modificarPolideportivo(String pNombre, String pLocalidad, String pCalle, String pDeporte, Double pLongitud, Double pLatitud, Double pPrecio) {
 				String pClave = getIntent().getExtras().getString("NombreGestion");
 				LaBD.getMiBD(getApplicationContext()).modificarPolideportivo(pClave, pNombre, pLocalidad, pCalle, pDeporte, pLongitud, pLatitud, pPrecio);
