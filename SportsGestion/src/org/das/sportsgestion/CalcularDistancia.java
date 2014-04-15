@@ -79,19 +79,21 @@ public class CalcularDistancia extends Activity{
 			
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(getApplicationContext(), nombre, 4511).show();
-				txtDistancia.setText(calcularDistancia2() + " KM");
+				if(comprobarCamposLLenos()){
+					txtDistancia.setText(calcularDistancia() + " KM");					
+				}
+				else{
+					Toast.makeText(getApplicationContext(), "Hay algun campo vacío", 4000).show();
+
+				}
 			}
 		});
 		
 	}
 	
-	private String calcularDistanciaa(){
+	private String calcularDistancia(){
 //		String nombre = getIntent().getExtras().getString("Nombre");
-		
-		// Para probar si calcula la distancia bien
-		//String nombre = "DISTANCIA";
-		
+
 		
 		Float distanciaTotal;
 		Double longitud = 0.0; 
@@ -101,14 +103,19 @@ public class CalcularDistancia extends Activity{
 		Cursor aCursor = LaBD.getMiBD(getApplicationContext()).seleccionarPolideportivo(nombre);
 		if(aCursor.moveToFirst()) {
 			do {
-				longitud = aCursor.getDouble(4);
-				latitud = aCursor.getDouble(5);		
+				longitud = aCursor.getDouble(5);
+				latitud = aCursor.getDouble(4);		
 			} while(aCursor.moveToNext());
 		}
 		
 		localizPersona = new Location ("Pers");
-		localizPersona.setLatitude(Double.parseDouble(edLatitud.getText().toString()));
-		localizPersona.setLongitude(Double.parseDouble(edLongitud.getText().toString()));
+		if(edLatitud.getText().toString() != "" && edLongitud.getText().toString() != ""){
+			localizPersona.setLatitude(Double.parseDouble(edLatitud.getText().toString()));
+			localizPersona.setLongitude(Double.parseDouble(edLongitud.getText().toString()));			
+		}
+		else{
+			
+		}
 		
 		localizPolidep = new Location ("Poli");
 		localizPolidep.setLatitude(latitud);
@@ -119,45 +126,29 @@ public class CalcularDistancia extends Activity{
 				
 		return distanciaTotal.toString();
 	}
-	
-	private String calcularDistancia2 () {  
-		        //double earthRadius = 3958.75;//miles  
-				double lat1 = 0.0, lng1 = 0.0, lat2, lng2 = 0.0;
-				
-				Cursor aCursor = LaBD.getMiBD(getApplicationContext()).seleccionarPolideportivo(nombre);
-				if(aCursor.moveToFirst()) {
-					do {
-						lng1 = aCursor.getDouble(4);
-						lat1 = aCursor.getDouble(5);		
-					} while(aCursor.moveToNext());
-				}
-				
-				
-				lat2 = Double.parseDouble(edLatitud.getText().toString());
-				lng2 = Double.parseDouble(edLongitud.getText().toString());
 		
-		        double earthRadius = 6371;//kilometers  
-		        double dLat = Math.toRadians(lat2 - lat1);  
-		        double dLng = Math.toRadians(lng2 - lng1);  
-		        double sindLat = Math.sin(dLat / 2);  
-		        double sindLng = Math.sin(dLng / 2);  
-		        double a = Math.pow(sindLat, 2) + Math.pow(sindLng, 2)  
-		                * Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2));  
-		        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));  
-		        double dist = earthRadius * c;  
-		  
-		        return String.valueOf(dist);  
-	}
-
-	
-	private Location calcularMiPosicion(LocationManager lm, List<String> providers) {
+	private Location calcularMiPosicion(LocationManager location, List<String> providers) {
 		Location localizPersona = null;
-		for (int i=providers.size()-1; i>=0; i--) {
-                localizPersona = lm.getLastKnownLocation(providers.get(i));
-                if (localizPersona != null) break;
-        }
+		boolean salir = false;
+		int cont = providers.size()-1;
+		
+		while(cont >= 0 && !salir ){
+			localizPersona = location.getLastKnownLocation(providers.get(cont));
+			
+			if (localizPersona != null){
+				salir = true;
+			}
+		}
 
 		return localizPersona;
+	}
+	
+	private boolean comprobarCamposLLenos(){
+		boolean todoLleno = false;
+		if(	edLatitud.getText().toString().compareTo("") != 0 && edLongitud.getText().toString().compareTo("") != 0) {
+			todoLleno = true;
+		}
+		return todoLleno;
 	}
 
 }

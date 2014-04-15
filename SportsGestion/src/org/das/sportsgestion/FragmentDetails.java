@@ -52,7 +52,7 @@ public class FragmentDetails extends Fragment{
 			
 			@Override
 			public void onClick(View arg0) {
-				nombre = BusquedaConfirmar.obtenerNombreDistancia();
+
 				Toast.makeText(getActivity(), nombre, 4511).show();
 				Intent intentDistancia = new Intent(getActivity(), CalcularDistancia.class);
 				intentDistancia.putExtra("NombreP",nombre);
@@ -96,6 +96,8 @@ public class FragmentDetails extends Fragment{
 
 	
 	public void actualizarCampos(String pNombre){
+		
+		nombre = pNombre;
 		
 		txtNombre = (TextView) getView().findViewById(R.id.txtNombre);
 		txtCalle = (TextView) getView().findViewById(R.id.txtCalle);

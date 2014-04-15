@@ -1,0 +1,93 @@
+package org.das.sportsgestion;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.Service;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Handler;
+import android.os.IBinder;
+import android.support.v4.app.NotificationCompat;
+import android.widget.Toast;
+
+public class Servicio extends Service {
+	
+	private ArrayList<String> listaPolideportivos = new ArrayList<String>();
+	private Intent intentDescuento;
+
+	@Override
+	public IBinder onBind(Intent intent) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	public void onCreate() {
+		super.onCreate();
+		
+		final Handler handler = new Handler();
+		Runnable run = new Runnable() {
+			
+			@Override
+			public void run() {
+				lanzarNotificacion();
+				handler.postDelayed(this, 60000);
+			}
+				
+		};
+		
+		run.run();
+	}
+	
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+	}
+
+	@Override
+	public int onStartCommand(Intent intent, int flags, int startId) {
+
+		return START_STICKY;
+	}
+	
+	public void obtenerLista(){
+		
+	}
+	private  void lanzarNotificacion(){
+		
+		String descuento = "";
+		descuento = elegirDescuento();
+		
+		intentDescuento = new Intent();
+		PendingIntent intentEnNoti = PendingIntent.getActivity(getApplicationContext(), 0, intentDescuento, PendingIntent.FLAG_CANCEL_CURRENT);
+		NotificationCompat.Builder aBuilder = new NotificationCompat.Builder(getApplicationContext());
+		
+		aBuilder.setSmallIcon(android.R.drawable.stat_notify_missed_call);
+		aBuilder.setContentTitle("Descuento");
+		aBuilder.setTicker(descuento);
+		aBuilder.setContentIntent(intentEnNoti);
+		aBuilder.setDefaults(Notification.DEFAULT_ALL);
+		aBuilder.addAction(R.drawable.tick, "SÍ", intentEnNoti);
+		NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+		mNotificationManager.notify(1,aBuilder.build());
+		aBuilder.setAutoCancel(true);
+	}
+
+	private String  elegirDescuento() {
+		Random rPolid= new Random();
+		Random rDesc = new Random();
+		String nombrePolideportivo = "";
+		
+		int porcentaje = (rDesc.nextInt(13)+1)*5;
+		
+		return ("Usted tiene un ") + porcentaje 
+				//+ (" % en el polideportivo ") + nombrePolideportivo
+				;
+	}
+}		
+
+

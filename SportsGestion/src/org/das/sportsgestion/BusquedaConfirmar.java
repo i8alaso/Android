@@ -124,9 +124,7 @@ public class BusquedaConfirmar extends FragmentActivity {
 		details.actualizarCampos(nombre);
 	}
 
-	public static String obtenerNombreDistancia() {
-		return nombre;
-	}
+
 	
 	
 //	

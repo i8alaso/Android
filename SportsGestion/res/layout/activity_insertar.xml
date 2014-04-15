@@ -74,7 +74,7 @@
         android:layout_alignBottom="@+id/txtInsLatitud"
         android:layout_alignLeft="@+id/edInsPrecio"
         android:ems="10"
-        android:inputType="numberDecimal" />
+        android:inputType="numberSigned" />
 
     <TextView
         android:id="@+id/txtInsLongitud"
@@ -111,7 +111,7 @@
         android:layout_alignLeft="@+id/butInsGuardar"
         android:layout_centerVertical="true"
         android:ems="10"
-        android:inputType="numberDecimal" />
+        android:inputType="numberSigned" />
 
     <TextView
         android:id="@+id/txtInsCalle"

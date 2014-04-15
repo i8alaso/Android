@@ -1,6 +1,7 @@
 package org.das.sportsgestion;
 
 import android.app.Activity;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -45,10 +46,20 @@ public class AdminInsertar extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				inicializarDatos();
-				insertarPolideportivo(nombre, localidad, calle, deporte, longitud, latitud, precio);
-				Toast.makeText(getApplicationContext(), R.string.MensajeInsercion, 5000).show();
-				AdminInsertar.this.finish();				
+				if(comprobarCamposLLenos()){
+					inicializarDatos();
+					if(comprobarNombre(nombre)){
+						insertarPolideportivo(nombre, localidad, calle, deporte, longitud, latitud, precio);
+						Toast.makeText(getApplicationContext(), R.string.MensajeInsercion, 5000).show();
+						AdminInsertar.this.finish();									
+					}
+					else{
+						Toast.makeText(getApplicationContext(), R.string.UsuarioElegido, 5000).show();
+					}
+				}
+				else{
+					Toast.makeText(getApplicationContext(), R.string.CampoVacio, 5000).show();
+				}
 			}
 
 			/**
@@ -65,12 +76,20 @@ public class AdminInsertar extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				inicializarDatos();
-				modificarPolideportivo(nombre, localidad, calle, deporte, longitud, latitud, precio);
-				
-				Toast.makeText(getApplicationContext(), R.string.MensajeModificacion, 5000).show();
-				AdminInsertar.this.finish();
-				
+				if(comprobarCamposLLenos()){
+					inicializarDatos();
+					if(comprobarNombre(nombre)){
+						modificarPolideportivo(nombre, localidad, calle, deporte, longitud, latitud, precio);
+						Toast.makeText(getApplicationContext(), R.string.MensajeModificacion, 5000).show();
+						AdminInsertar.this.finish();
+					}
+					else{
+						Toast.makeText(getApplicationContext(), R.string.UsuarioElegido, 5000).show();
+					}
+				}
+				else{
+					Toast.makeText(getApplicationContext(), R.string.CampoVacio, 5000).show();
+				}
 			}
 			
 			/**
@@ -95,5 +114,30 @@ public class AdminInsertar extends Activity {
 		longitud = Double.parseDouble(edLongitud.getText().toString());
 		latitud = Double.parseDouble(edLatitud.getText().toString());
 		precio = Double.parseDouble(edPrecio.getText().toString());
+	}
+	
+	private boolean comprobarNombre(String pNombre){
+		boolean disponible = false;
+		
+		Cursor unCursor = LaBD.getMiBD(getApplicationContext()).comprobarSiExiste(pNombre);
+		
+		if(unCursor.moveToFirst()){
+			if(unCursor.getInt(0) == 0){
+				disponible = true;
+			}
+		}
+		return disponible;
+	}
+	
+	private boolean comprobarCamposLLenos(){
+		boolean todoLleno = false;
+		if(edNombre.getText().toString().compareTo("") != 0 && edCalle.getText().toString().compareTo("") != 0 &&
+			edDeporte.getText().toString().compareTo("") != 0 && edLocalidad.getText().toString().compareTo("") != 0 &&
+			edLatitud.getText().toString().compareTo("") != 0 && edLongitud.getText().toString().compareTo("") != 0 &&
+			edPrecio.getText().toString().compareTo("") != 0)
+		{
+			todoLleno = true;
+		}
+		return todoLleno;
 	}
 }

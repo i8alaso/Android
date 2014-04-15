@@ -18,6 +18,7 @@ public class ResultadoConLista extends FragmentActivity implements IListFragment
 	private Display mDisplay;
 	
 	private String localidad,  deporte, nombre;
+	private static String nombrePolid;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,7 @@ public class ResultadoConLista extends FragmentActivity implements IListFragment
 	
 	@Override
 	public void onItemSelected(String item) {
-		String nombrePolid = item.substring(14);
+		nombrePolid = item.substring(14);
 
 		//Como
 		if(mDisplay.getRotation() != Surface.ROTATION_0 && mDisplay.getRotation() != Surface.ROTATION_180) {
@@ -73,6 +74,7 @@ public class ResultadoConLista extends FragmentActivity implements IListFragment
 		listaPolid.updateList(localidad, deporte);
 			
 	}
+
 	
 
 }

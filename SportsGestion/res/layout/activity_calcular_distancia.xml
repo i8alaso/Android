@@ -33,7 +33,7 @@
 	        android:layout_alignLeft="@+id/textLatitud"
 	        android:layout_below="@+id/textLatitud"
 	        android:ems="10"
-	        android:inputType="numberDecimal" />
+	        android:inputType="numberSigned" />
 	
 	    <TextView
 	        android:id="@+id/textLongitud"
@@ -68,7 +68,7 @@
 	        android:layout_alignRight="@+id/butCalcular"
 	        android:layout_below="@+id/textLongitud"
 	        android:ems="10"
-	        android:inputType="numberDecimal" >
+	        android:inputType="numberSigned" >
 
 	        <requestFocus />
 	    </EditText>

@@ -19,13 +19,16 @@
 	<string name= "Administrador"> Administrador</string>  
     
 <!-- MainActivity -->
-    <string name="BUSCAR">BUSCAR</string>
+    <string name="Buscar">BUSCAR</string>
     <string name="MensajeSalirAplicacion"> ¿Quieres salir de la aplicación?</string>
 	<string name= "Ayuda"> Esta es la ayuda de la aplicación desarrollada por Iñigo Ochoa de Erive Lasso de la Vega
 	    para la asigantura de DAS</string>
 	<string name="Contrasena"> Escriba la contraseña de administrador: </string>
 	<string name="IdentifAdmin"> Entrar como administrador</string> 
-	<string name="GestionarPolid"> GESTIONAR POLIDEPORTIVOS</string>  
+	<string name="GestionarPolid"> GESTIONAR POLIDEPORTIVOS</string> 
+	<string name="Descuentos">DESCUENTOS %</string>
+    <string name="MiCuenta"> MI CUENTA</string> 
+    <string name="Salir"> SALIR</string> 
 
     
 <!-- BusquedaActivity.java -->    
@@ -69,6 +72,8 @@
 <!-- AdminInsertar -->
 	<string name= "MensajeInsercion"> LA INSERCIÓN SE HA HECHO CORRECTAMENTE</string>
     <string name= "MensajeModificacion"> LA MODIFICACIÓN SE HA HECHO CORRECTAMENTE</string>
+    <string name= "UsuarioElegido"> Este usuario ya está escogido</string>
+    <string name= "CampoVacio"> Hay algun campo vacío</string>
 
 
 
@@ -77,8 +82,7 @@
     <string name="title_activity_busqueda">BusquedaActivity</string>
     
 <!-- BORRAR -->    
-    <string name="DESCUENTOS">DESCUENTOS %</string>
-    <string name="MiCuenta"> MI CUENTA</string>
+
     <string name="MisReservas"> MIS RESERVAS</string>
     <string name="UNIRSE"> UNIRSE PARA JUGAR </string>
     <string name="Descripcion"> Descripción del \ncentro y de la \ninstalación a \nreservar</string>
@@ -87,7 +91,6 @@
     <string name="Duchas"> DUCHAS</string>
 
     <string name="Pagar"> PAGAR</string>
-    <string name="Salir"> Salir</string>
     <string name="kDeporte"> <i>Deporte</i></string>
     <string name="kLugar"> <i>Lugar</i></string>
     <string name="kHora"> <i>Hora</i></string>

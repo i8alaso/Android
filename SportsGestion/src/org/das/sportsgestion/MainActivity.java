@@ -32,10 +32,7 @@ import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity{
 	
-	private Button btnBuscar;
-	private Button btnGestion;
-	private Button btnCuenta;
-	private Button btnSalir;
+	private Button btnBuscar, btnGestion, btnCuenta, btnDescuentos, btnSalir;
 	
 	private String idiomaSeleccionado;
 	
@@ -100,6 +97,18 @@ public class MainActivity extends FragmentActivity{
 				
 			}
 		});
+		
+		btnDescuentos = (Button) findViewById(R.id.butDescuentos);
+		btnDescuentos.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intDescuentos = new Intent(MainActivity.this, Servicio.class);
+				startService(intDescuentos);
+				
+			}
+		});
+		
 		
 		btnSalir = (Button) findViewById(R.id.butSalir);
 		btnSalir.setText(R.string.Salir);

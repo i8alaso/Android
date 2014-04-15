@@ -1,5 +1,7 @@
 package org.das.sportsgestion;
 
+import java.util.ArrayList;
+
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,6 +12,7 @@ public class LaBD extends SQLiteOpenHelper{
 
 	private static LaBD miLaBD;
 	private SQLiteDatabase db = getWritableDatabase();
+//	private ArrayList<String> listaPolideportivos;
 	
 	private LaBD(Context context, String name, CursorFactory factory, int version)  {
 		super(context, name, factory, version);
@@ -26,6 +29,8 @@ public class LaBD extends SQLiteOpenHelper{
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
+//		listaPolideportivos = new ArrayList<String>();
+		
 		db.execSQL("CREATE TABLE Polideportivos ('Nombre' TEXT PRIMARY KEY,'Localidad' TEXT, 'Calle' TEXT, 'Deporte' TEXT, 'Latitud' DOUBLE, 'Longitud' DOUBLE, 'Precio' DOUBLE)");
 		db.execSQL("CREATE TABLE Coche ('Codigo' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 'Nombre' TEXT)");
 		
@@ -38,6 +43,17 @@ public class LaBD extends SQLiteOpenHelper{
 		db.execSQL("INSERT INTO 'Polideportivos' (Nombre, Localidad, Calle, Deporte, Latitud, Longitud, Precio) values ('BILBAO ARENA', 'Bilbao', '', 'Baloncesto', 42.86434, -2.64391, 25.0)" );
 		db.execSQL("INSERT INTO 'Polideportivos' (Nombre, Localidad, Calle, Deporte, Latitud, Longitud, Precio) values ('ILLUMBE', 'Donosti', 'Paseo de Miramón, 2', 'Baloncesto', 43.2985502,-1.9706287, 35.0)" );
 		db.execSQL("INSERT INTO 'Polideportivos' (Nombre, Localidad, Calle, Deporte, Latitud, Longitud, Precio) values ('BUESA ARENA', 'Gasteiz', 'Calle Portal de Zurbano', 'Baloncesto', 42.86434,-2.64391, 37.0)" );
+		
+//		listaPolideportivos.add("TXURDINAGA");
+//		listaPolideportivos.add("FANGO");
+//		listaPolideportivos.add("SAN MAMES");
+//		listaPolideportivos.add("SAN IGNACIO");
+//		listaPolideportivos.add("MENDIZORROZA");
+//		listaPolideportivos.add("ILLUMBE");
+//		listaPolideportivos.add("BILBAO ARENA");
+//		listaPolideportivos.add("BUESA ARENA");
+		
+		
 		
 		
 	}
@@ -52,6 +68,8 @@ public class LaBD extends SQLiteOpenHelper{
 		String sql = "INSERT INTO 'Polideportivos' (Nombre, Localidad, Calle, Deporte, Latitud, Longitud, Precio) VALUES ('" + pNombre +"','"
 					+ pLocalidad + "', '" + pCalle + "','" + pDeporte + "'," + pLatitud + ","+ pLongitud + ","+ pPrecio +")";
 		this.db.execSQL(sql);
+		//listaPolideportivos.add("pNombre");
+		
 	}
 	
 	public void modificarPolideportivo(String pClave, String pNombre, String pLocalidad, String pCalle, String pDeporte, Double pLongitud, Double pLatitud, Double pPrecio){
@@ -76,17 +94,37 @@ public class LaBD extends SQLiteOpenHelper{
 		return db.rawQuery(sql, null);
 	}
 	
+	public Cursor comprobarSiExiste(String pNombre){
+		String sql = "SELECT COUNT (*) FROM Polideportivos WHERE Nombre = '" + pNombre + "'"; 
+		return db.rawQuery(sql, null);
+	}
 	
 	
 
 	public void eliminar(String pNombre) {
 		String sql = "DELETE FROM Polideportivos WHERE Nombre ='" + pNombre + "'";
+		boolean encontrado = false;
+		int cont = 0;
+		
+//		while (cont < listaPolideportivos.size()-1 && !encontrado){
+//			if(listaPolideportivos.get(cont) == pNombre){
+//				encontrado = true;
+//			}
+//			else{
+//				cont++;
+//			}
+//		}
+//		
+//		listaPolideportivos.remove(cont);
+		
 		this.db.execSQL(sql);
 	}
 	
 	public void eliminarTodo(){
 		String sql = "DELETE FROM Polideportivos";
 		this.db.execSQL(sql);
+		
+//		listaPolideportivos.clear();
 	}
 
 	public void obtenerCoordenadas(String pNombre) {
