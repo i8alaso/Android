@@ -4,9 +4,9 @@
 	    android:layout_width="match_parent"
 	    android:layout_height="match_parent">
 	
-	<RelativeLayout 
+	<RelativeLayout
 	    android:layout_width="match_parent"
-	    android:layout_height="match_parent" >
+	    android:layout_height="420dp" >
 	
 	    <Button
 	        android:id="@+id/butPosicion"
@@ -65,13 +65,11 @@
 	        android:id="@+id/editLongitud"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:layout_alignRight="@+id/butCalcular"
+	        android:layout_alignLeft="@+id/textLongitud"
 	        android:layout_below="@+id/textLongitud"
+	        android:layout_marginTop="12dp"
 	        android:ems="10"
-	        android:inputType="numberSigned" >
-
-	        <requestFocus />
-	    </EditText>
+	        android:inputType="numberSigned" />
 	
 	</RelativeLayout>
 </ScrollView>

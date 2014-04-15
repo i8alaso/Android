@@ -54,6 +54,7 @@ public class FragmentDetails extends Fragment{
 			public void onClick(View arg0) {
 
 				Toast.makeText(getActivity(), nombre, 4511).show();
+				
 				Intent intentDistancia = new Intent(getActivity(), CalcularDistancia.class);
 				intentDistancia.putExtra("NombreP",nombre);
 				startActivity(intentDistancia);
@@ -99,7 +100,7 @@ public class FragmentDetails extends Fragment{
 		
 		nombre = pNombre;
 		
-		txtNombre = (TextView) getView().findViewById(R.id.txtNombre);
+		txtNombre = (TextView) getView().findViewById(R.id.txtNombree);
 		txtCalle = (TextView) getView().findViewById(R.id.txtCalle);
 		txtDeporte = (TextView) getView().findViewById(R.id.txtInstalaciones);
 		txtLocalidad = (TextView) getView().findViewById(R.id.txtLocalidad);
@@ -108,7 +109,7 @@ public class FragmentDetails extends Fragment{
 		Cursor aCursor = LaBD.getMiBD(getActivity()).seleccionarPolideportivo(pNombre);
 		if(aCursor.moveToFirst()) {
 			do {
-				txtNombre.setText("POLIDEPORTIVO " + aCursor.getString(0).toString());
+				txtNombre.setText("POLIDEPORTIVO " + nombre);
 				txtCalle.setText(aCursor.getString(2).toString());
 				txtLocalidad.setText(aCursor.getString(1).toString());
 				txtPrecio.setText(Double.toString(aCursor.getDouble(6)) + " €");
@@ -171,13 +172,14 @@ public class FragmentDetails extends Fragment{
 		PendingIntent intentEnNoti = PendingIntent.getActivity(getActivity(), 0, intentTicket, PendingIntent.FLAG_CANCEL_CURRENT);
 		NotificationCompat.Builder aBuilder = new NotificationCompat.Builder(getActivity());
 		
-		aBuilder.setSmallIcon(android.R.drawable.stat_notify_missed_call);
-		//aBuilder.setLargeIcon(((BitmapDrawable)getResources().getDrawable(R.drawable.onin)).getBitmap());
-		aBuilder.setContentTitle(Integer.toString(R.string.TicketImprimido));
-		aBuilder.setTicker(Integer.toString(R.string.TicketImprOk));
+		aBuilder.setSmallIcon(android.R.drawable.stat_notify_sdcard);
+		aBuilder.setContentTitle("Ticket");
+		aBuilder.setTicker("Tu ticket se ha imprimido correctamente");
 		aBuilder.setContentIntent(intentEnNoti);
 		aBuilder.setDefaults(Notification.DEFAULT_ALL);
-		aBuilder.addAction(R.drawable.tick, "SÍ", intentEnNoti);
+		//aBuilder.addAction(R.drawable.tick, "SÍ", intentEnNoti);
+		
+		
 		NotificationManager mNotificationManager = (NotificationManager) getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
 		mNotificationManager.notify(1,aBuilder.build());
 		aBuilder.setAutoCancel(true);

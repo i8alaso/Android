@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class AdminInsertar extends Activity {
@@ -13,7 +14,7 @@ public class AdminInsertar extends Activity {
 	private EditText edNombre, edCalle, edLocalidad, edDeporte, edLongitud, edLatitud, edPrecio; 
 	private Button butAceptar, butModificar;
 	
-	private String nombre, localidad, calle, deporte;
+	private String nombre, localidad, calle, deporte, pClave;
 	private Double longitud, latitud, precio;
 
 	@Override
@@ -32,11 +33,14 @@ public class AdminInsertar extends Activity {
 		butAceptar = (Button) findViewById(R.id.butInsGuardar);
 		butModificar = (Button) findViewById(R.id.butInsModificar);
 		
+		pClave = getIntent().getExtras().getString("NombreGestion");
+		
 		if(getIntent().getExtras().getString("Tipo").equals("Insertar")){
 			butModificar.setVisibility(View.INVISIBLE);
 		}
 		else{
 			butAceptar.setVisibility(View.INVISIBLE);
+			llenarCampos();
 		}
 		
 		/**
@@ -54,7 +58,7 @@ public class AdminInsertar extends Activity {
 						AdminInsertar.this.finish();									
 					}
 					else{
-						Toast.makeText(getApplicationContext(), R.string.UsuarioElegido, 5000).show();
+						Toast.makeText(getApplicationContext(), R.string.PolideportivoElegido, 5000).show();
 					}
 				}
 				else{
@@ -84,7 +88,7 @@ public class AdminInsertar extends Activity {
 						AdminInsertar.this.finish();
 					}
 					else{
-						Toast.makeText(getApplicationContext(), R.string.UsuarioElegido, 5000).show();
+						Toast.makeText(getApplicationContext(), R.string.PolideportivoElegido, 5000).show();
 					}
 				}
 				else{
@@ -96,7 +100,7 @@ public class AdminInsertar extends Activity {
 			 * Llama a la BD para que modifique  	
 			 */
 			private void modificarPolideportivo(String pNombre, String pLocalidad, String pCalle, String pDeporte, Double pLongitud, Double pLatitud, Double pPrecio) {
-				String pClave = getIntent().getExtras().getString("NombreGestion");
+				
 				LaBD.getMiBD(getApplicationContext()).modificarPolideportivo(pClave, pNombre, pLocalidad, pCalle, pDeporte, pLongitud, pLatitud, pPrecio);
 				
 			}
@@ -139,5 +143,22 @@ public class AdminInsertar extends Activity {
 			todoLleno = true;
 		}
 		return todoLleno;
+	}
+	
+	private void llenarCampos(){		
+		Cursor aCursor = LaBD.getMiBD(getApplicationContext()).seleccionarPolideportivo(pClave);
+		
+		if(aCursor.moveToFirst()) {
+			do {
+				edNombre.setText(aCursor.getString(0).toString());
+				edLocalidad.setText(aCursor.getString(1).toString());
+				edDeporte.setText(aCursor.getString(3).toString());
+				edCalle.setText(aCursor.getString(2).toString());
+				edPrecio.setText(Double.toString(aCursor.getDouble(6)));
+				edLatitud.setText(Double.toString(aCursor.getDouble(4)));
+				edLongitud.setText(Double.toString(aCursor.getDouble(5)));
+				
+			} while(aCursor.moveToNext());
+		}
 	}
 }

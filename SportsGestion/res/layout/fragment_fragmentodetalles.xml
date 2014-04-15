@@ -19,15 +19,6 @@
 	        android:text="@string/Pagar" />
 
 	    <TextView
-	        android:id="@+id/txtCalle"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_above="@+id/textLocalidad"
-	        android:layout_marginRight="18dp"
-	        android:layout_toLeftOf="@+id/butPagar"
-	        android:text="TextView" />
-
-	    <TextView
 	        android:id="@+id/txtLocalidad"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -54,15 +45,6 @@
 	        android:text="TextView" />
 
 	    <TextView
-	        android:id="@+id/txtInstalaciones"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignBaseline="@+id/textInstalaciones"
-	        android:layout_alignBottom="@+id/textInstalaciones"
-	        android:layout_toRightOf="@+id/txtPrecio"
-	        android:text="TextView" />
-
-	    <TextView
 	        android:id="@+id/textLocalidad"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -72,34 +54,7 @@
 	        android:text="@string/Localidad" />
 
 	    <TextView
-	        android:id="@+id/textInstalaciones"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignLeft="@+id/butDistancia"
-	        android:layout_below="@+id/textPrecio"
-	        android:layout_marginTop="52dp"
-	        android:text="@string/Instalaciones" />
-
-	    <TextView
-	        android:id="@+id/textCalle"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignLeft="@+id/textInstalaciones"
-	        android:layout_alignParentTop="true"
-	        android:layout_marginTop="104dp"
-	        android:text="@string/Calle" />
-
-	    <TextView
-	        android:id="@+id/textNombre"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_above="@+id/txtCalle"
-	        android:layout_alignLeft="@+id/textCalle"
-	        android:layout_marginBottom="42dp"
-	        android:text="@string/Nombre" />
-
-	    <TextView
-	        android:id="@+id/txtNombre"
+	        android:id="@+id/txtNombree"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_alignTop="@+id/textNombre"
@@ -115,6 +70,51 @@
 	        android:layout_marginRight="26dp"
 	        android:layout_toLeftOf="@+id/txtPrecio"
 	        android:text="@string/Distancia" />
+
+	    <TextView
+	        android:id="@+id/txtCalle"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_above="@+id/textLocalidad"
+	        android:layout_toLeftOf="@+id/butPagar"
+	        android:text="TextView" />
+
+	    <TextView
+	        android:id="@+id/textNombre"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_above="@+id/txtCalle"
+	        android:layout_alignParentLeft="true"
+	        android:layout_marginBottom="42dp"
+	        android:layout_marginLeft="14dp"
+	        android:text="@string/Nombre" />
+
+	    <TextView
+	        android:id="@+id/textCalle"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/textNombre"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginTop="102dp"
+	        android:text="@string/Calle" />
+
+	    <TextView
+	        android:id="@+id/textInstalaciones"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/textPrecio"
+	        android:layout_below="@+id/textPrecio"
+	        android:layout_marginTop="54dp"
+	        android:text="@string/Instalaciones" />
+
+	    <TextView
+	        android:id="@+id/txtInstalaciones"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBaseline="@+id/textInstalaciones"
+	        android:layout_alignBottom="@+id/textInstalaciones"
+	        android:layout_toRightOf="@+id/butDistancia"
+	        android:text="TextView" />
 
 	</RelativeLayout>
 

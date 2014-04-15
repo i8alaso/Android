@@ -68,11 +68,12 @@
     <string name="ModificarPolideportivo"> "Modificar Polideportivo"</string>  
 	<string name="MensajeCualBorrar"> "Escriba cuál es el polideportivo que quiere borrar:"</string>
 	<string name="MensajeCualModificar"> "Escriba cuál es el polideportivo que quiere modificar:"</string>
+	<string name="MensajeBorrarTodos"> "¿Estas seguro de que quieres borrar todos los polideportivos?"</string>
     
 <!-- AdminInsertar -->
 	<string name= "MensajeInsercion"> LA INSERCIÓN SE HA HECHO CORRECTAMENTE</string>
     <string name= "MensajeModificacion"> LA MODIFICACIÓN SE HA HECHO CORRECTAMENTE</string>
-    <string name= "UsuarioElegido"> Este usuario ya está escogido</string>
+    <string name= "PolideportivoElegido"> Este polideportivo ya está escogido</string>
     <string name= "CampoVacio"> Hay algun campo vacío</string>
 
 

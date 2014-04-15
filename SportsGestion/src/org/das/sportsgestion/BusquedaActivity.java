@@ -27,31 +27,13 @@ public class BusquedaActivity extends Activity{
 		txtView.setBackgroundColor(Color.GRAY);
 		txtView.setTextColor(Color.WHITE);
 				
-		txtDeporte = (EditText) findViewById(R.id.edBuscar);
+		txtDeporte = (EditText) findViewById(R.id.edDeporteBuscar);
 		txtDeporte.setBackgroundColor(Color.WHITE);
 		txtDeporte.setTextColor(Color.GRAY);
-		txtDeporte.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				txtDeporte.setText("");
-				txtDeporte.setTextColor(Color.BLACK);	
-			}
-		});
 		
 		txtLocalidad = (EditText) findViewById(R.id.edLocalidad);
 		txtLocalidad.setBackgroundColor(Color.WHITE);
 		txtLocalidad.setTextColor(Color.GRAY);
-		txtLocalidad.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				txtLocalidad.setText("");
-				txtLocalidad.setTextColor(Color.BLACK);
-				
-			}
-		});
-
 		
 		butBuscar = (Button) findViewById(R.id.buttonBuscar);
 		butBuscar.setBackgroundColor(Color.DKGRAY);

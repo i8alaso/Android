@@ -62,7 +62,7 @@ public class MenuGestionar extends FragmentActivity implements IListFragmentList
 			
 			@Override
 			public void onClick(View v) {
-				LaBD.getMiBD(getApplicationContext()).eliminarTodo();
+				mostrarMensaje(3);
 				
 			}
 		});
@@ -119,15 +119,21 @@ public class MenuGestionar extends FragmentActivity implements IListFragmentList
 			mensaje.setPositiveButton(R.string.Aceptar, new DialogInterface.OnClickListener() {
 				
 				public void onClick(DialogInterface dialog, int whichButton) {
-					Intent intModificar = new Intent(getApplicationContext(), AdminInsertar.class);
-					intModificar.putExtra("Tipo", "Modificar");
-					intModificar.putExtra("NombreGestion",txtNombrePoli.getText().toString());
-					startActivity(intModificar);
+					
+					if(txtNombrePoli.getText().toString().compareTo("") != 0){
+						Intent intModificar = new Intent(getApplicationContext(), AdminInsertar.class);
+						intModificar.putExtra("Tipo", "Modificar");
+						intModificar.putExtra("NombreGestion",txtNombrePoli.getText().toString());
+						startActivity(intModificar);
+					}
+					else{
+						Toast.makeText(getApplicationContext(), R.string.CampoVacio, 2000).show();
+					}
 				}
 			});
-			
+			mensaje.show();
 		}
-		else{	
+		else if (pCual == 2){	
 			mensaje.setTitle(R.string.BorrarPolideportivo);
 			mensaje.setMessage(R.string.MensajeCualBorrar);
 			
@@ -142,10 +148,39 @@ public class MenuGestionar extends FragmentActivity implements IListFragmentList
 					LaBD.getMiBD(getApplicationContext()).eliminar(txtNombrePoli.getText().toString());
 				}
 			});
-			
+			mensaje.show();
 		}
-		mensaje.show();
+		else{
+			AlertDialog.Builder borrarTodosBuilder = new AlertDialog.Builder(this);
+			borrarTodosBuilder.setTitle(R.string.MensajeBorrarTodos);
+			borrarTodosBuilder.setMessage(R.string.MensajeBorrarTodos);
+			borrarTodosBuilder.setPositiveButton(R.string.Si, new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					borrarTodosLosPolideportivos();
+					dialog.cancel();
+					
+				}
+			});
+			borrarTodosBuilder.setNegativeButton(R.string.No, new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					dialog.cancel();
+					
+				}
+			});
+			borrarTodosBuilder.show();
+		}
+		
 		mostrarTodos();
 	}
+	
+	
+	private void borrarTodosLosPolideportivos(){
+		LaBD.getMiBD(getApplicationContext()).eliminarTodo();
+	}
+	
 
 }

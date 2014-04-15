@@ -21,37 +21,39 @@
             android:id="@+id/butGestionPolid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/butBuscar"
+            android:layout_below="@+id/buttonCuenta"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="69dp"
+            android:layout_marginTop="55dp"
             android:text="@string/GestionarPolid" />
+
+        <Button
+            android:id="@+id/butDescuentos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/butBuscar"
+            android:layout_marginRight="27dp"
+            android:layout_marginTop="48dp"
+            android:layout_toLeftOf="@+id/butSalir"
+            android:text="@string/Descuentos" />
 
         <Button
             android:id="@+id/butBuscar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="67dp"
+            android:layout_alignRight="@+id/butDescuentos"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="35dp"
             android:text="@string/Buscar" />
-
-        <Button
-            android:id="@+id/butDescuentos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/butBuscar"
-            android:layout_below="@+id/buttonCuenta"
-            android:layout_marginTop="45dp"
-            android:text= "@string/Descuentos"/>
 
         <Button
             android:id="@+id/buttonCuenta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/butBuscar"
-            android:layout_below="@+id/butGestionPolid"
-            android:layout_marginTop="44dp"
-             android:text= "@string/MiCuenta" />
+            android:layout_below="@+id/butDescuentos"
+            android:layout_marginTop="51dp"
+            android:text="@string/MiCuenta" />
 
     </RelativeLayout>
 

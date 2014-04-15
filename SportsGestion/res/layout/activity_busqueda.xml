@@ -14,38 +14,13 @@
 	    tools:context=".BusquedaActivity" >
 	
 	    <EditText
-	        android:id="@+id/edLocalidad"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignLeft="@+id/edBuscar"
-	        android:layout_below="@+id/edBuscar"
-	        android:layout_marginTop="64dp"
-	        android:ems="10"
-	        android:text="@string/kLocalidad" >
-	
-	        <requestFocus />
-	    </EditText>
-	
-	    <EditText
-	        android:id="@+id/edBuscar"
+	        android:id="@+id/edDeporteBuscar"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_alignLeft="@+id/button2"
 	        android:layout_below="@+id/QueBuscas"
 	        android:layout_marginTop="40dp"
-	        android:ems="10"
-	        android:text="@string/kDeporte" />
-
-	    <TextView
-	        android:id="@+id/QueBuscas"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignParentLeft="true"
-	        android:layout_alignParentTop="true"
-	        android:layout_marginLeft="76dp"
-	        android:layout_marginTop="39dp"
-	        android:text="@string/QueBuscas"
-	        android:textSize="@dimen/newDimension" />
+	        android:ems="10" />
 
 	    <Button
 	        android:id="@+id/buttonBuscar"
@@ -55,7 +30,7 @@
 	        android:layout_alignRight="@+id/QueBuscas"
 	        android:layout_marginBottom="15dp"
 	        android:layout_marginRight="11dp"
-	        android:text="@string/BUSCAR" />
+	        android:text="@string/Buscar" />
 
 	    <Button
 	        android:id="@+id/button2"
@@ -66,6 +41,44 @@
 	        android:layout_marginRight="46dp"
 	        android:layout_marginTop="46dp"
 	        android:text="Rellenar" />
+
+	    <TextView
+	        android:id="@+id/textView1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/QueBuscas"
+	        android:layout_marginTop="17dp"
+	        android:layout_toLeftOf="@+id/buttonBuscar"
+	        android:text="@string/Deporte" />
+
+	    <TextView
+	        android:id="@+id/textLocalidad"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/edDeporteBuscar"
+	        android:layout_marginTop="39dp"
+	        android:layout_toLeftOf="@+id/buttonBuscar"
+	        android:text="@string/Localidad" />
+
+	    <EditText
+	        android:id="@+id/edLocalidad"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/textLocalidad"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginTop="36dp"
+	        android:ems="10" />
+
+	    <TextView
+	        android:id="@+id/QueBuscas"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignLeft="@+id/edLocalidad"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginLeft="16dp"
+	        android:layout_marginTop="38dp"
+	        android:text="@string/QueBuscas"
+	        android:textSize="@dimen/newDimension" />
 	
 	</RelativeLayout>
 </ScrollView>	

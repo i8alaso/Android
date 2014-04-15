@@ -28,7 +28,6 @@ public class CalcularDistancia extends Activity{
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_calcular_distancia);
 
@@ -43,7 +42,7 @@ public class CalcularDistancia extends Activity{
 
 
 		
-		//Pulsando este botón nos dirá cuál es nuestra posicion actual
+		//Pulsando este botón nos dirá cuál es la última posición que se guardo
 		butPosicion = (Button) findViewById(R.id.butPosicion);
 		butPosicion.setOnClickListener(new View.OnClickListener() {
 			
@@ -92,9 +91,6 @@ public class CalcularDistancia extends Activity{
 	}
 	
 	private String calcularDistancia(){
-//		String nombre = getIntent().getExtras().getString("Nombre");
-
-		
 		Float distanciaTotal;
 		Double longitud = 0.0; 
 		Double latitud = 0.0;

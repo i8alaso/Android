@@ -118,7 +118,8 @@ public class MainActivity extends FragmentActivity{
 			@Override
 			public void onClick(View arg0) {
 				AlertDialog.Builder salirBuilder = new AlertDialog.Builder(MainActivity.this);
-				salirBuilder.setTitle(R.string.MensajeSalirAplicacion);
+				salirBuilder.setTitle(R.string.Salir);
+				salirBuilder.setMessage(R.string.MensajeSalirAplicacion);
 				salirBuilder.setPositiveButton(R.string.Si, new DialogInterface.OnClickListener() {
 					
 					@Override
