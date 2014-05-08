@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+	<RelativeLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="533dp">
+
+		<TextView
+		    android:id="@+id/txtPerfNombre"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentLeft="true"
+		    android:layout_alignParentTop="true"
+		    android:layout_marginLeft="17dp"
+		    android:layout_marginTop="60dp"
+		    android:text="@string/User" />
+
+		<EditText
+		    android:id="@+id/edPerfNombre"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignBaseline="@+id/txtPerfNombre"
+		    android:layout_alignBottom="@+id/txtPerfNombre"
+		    android:layout_alignParentRight="true"
+		    android:layout_marginRight="22dp"
+		    android:ems="10" />
+
+		<EditText
+		    android:id="@+id/edPerfLocalidad"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignRight="@+id/edPerfNombre"
+		    android:layout_below="@+id/edPerfNombre"
+		    android:layout_marginTop="35dp"
+		    android:ems="10"
+		    android:inputType="textPersonName" />
+
+		<EditText
+		    android:id="@+id/edPerfCalle"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignLeft="@+id/edPerfLocalidad"
+		    android:layout_below="@+id/edPerfLocalidad"
+		    android:layout_marginTop="34dp"
+		    android:ems="10"
+		    android:inputType="textPersonName" />
+
+		<EditText
+		    android:id="@+id/edPerfPolideportivo"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignLeft="@+id/edPerfCalle"
+		    android:layout_below="@+id/edPerfCalle"
+		    android:layout_marginTop="37dp"
+		    android:ems="10"
+		    android:inputType="textPersonName" />
+
+		<EditText
+		    android:id="@+id/edPerfRepPwd"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignLeft="@+id/edPerfPwd"
+		    android:layout_below="@+id/edPerfPwd"
+		    android:layout_marginTop="15dp"
+		    android:ems="10"
+		    android:inputType="textPassword" />
+
+		<EditText
+		    android:id="@+id/edPerfPwd"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignLeft="@+id/edPerfPolideportivo"
+		    android:layout_below="@+id/edPerfPolideportivo"
+		    android:layout_marginTop="66dp"
+		    android:ems="10"
+		    android:inputType="textPassword" />
+
+		<TextView
+		    android:id="@+id/txtPerfLocalidad"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignBottom="@+id/edPerfLocalidad"
+		    android:layout_alignLeft="@+id/txtPerfNombre"
+		    android:text="@string/Localidad" />
+
+		<TextView
+		    android:id="@+id/txtPerfCalle"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignBaseline="@+id/edPerfCalle"
+		    android:layout_alignBottom="@+id/edPerfCalle"
+		    android:layout_alignLeft="@+id/txtPerfLocalidad"
+		    android:text="@string/Calle" />
+
+		<TextView
+		    android:id="@+id/txtPerfPolideportivo"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignBaseline="@+id/edPerfPolideportivo"
+		    android:layout_alignBottom="@+id/edPerfPolideportivo"
+		    android:layout_alignLeft="@+id/txtPerfCalle"
+		    android:text="@string/PolideportivoFav" />
+
+		<TextView
+		    android:id="@+id/txtPerfPwd"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignBaseline="@+id/edPerfPwd"
+		    android:layout_alignBottom="@+id/edPerfPwd"
+		    android:layout_alignLeft="@+id/txtPerfPolideportivo"
+		    android:text="@string/Contrasenia" />
+
+		<Button
+		    android:id="@+id/butPerfOk"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentBottom="true"
+		    android:layout_alignRight="@+id/edPerfRepPwd"
+		    android:layout_marginRight="57dp"
+		    android:text="@string/Aceptar" />
+
+		<TextView
+		    android:id="@+id/txtPerfRepPwd"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignBottom="@+id/edPerfRepPwd"
+		    android:layout_alignLeft="@+id/txtPerfPwd"
+		    android:text="@string/RepContrasenia" />
+
+		<Button
+		    android:id="@+id/butPerfBorrar"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignLeft="@+id/txtPerfRepPwd"
+		    android:layout_alignParentBottom="true"
+		    android:layout_marginLeft="13dp"
+		    android:text="@string/Borrar" />
+
+	</RelativeLayout>
+
+</ScrollView>

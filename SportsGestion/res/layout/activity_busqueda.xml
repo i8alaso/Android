@@ -23,16 +23,6 @@
 	        android:ems="10" />
 
 	    <Button
-	        android:id="@+id/buttonBuscar"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignParentBottom="true"
-	        android:layout_alignRight="@+id/QueBuscas"
-	        android:layout_marginBottom="15dp"
-	        android:layout_marginRight="11dp"
-	        android:text="@string/Buscar" />
-
-	    <Button
 	        android:id="@+id/button2"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -43,7 +33,7 @@
 	        android:text="Rellenar" />
 
 	    <TextView
-	        android:id="@+id/textView1"
+	        android:id="@+id/txtPerfNombre"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_below="@+id/QueBuscas"
@@ -79,6 +69,15 @@
 	        android:layout_marginTop="38dp"
 	        android:text="@string/QueBuscas"
 	        android:textSize="@dimen/newDimension" />
+
+	    <Button
+	        android:id="@+id/buttonBuscar"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignRight="@+id/QueBuscas"
+	        android:layout_below="@+id/button2"
+	        android:layout_marginTop="29dp"
+	        android:text="@string/Buscar" />
 	
 	</RelativeLayout>
 </ScrollView>	

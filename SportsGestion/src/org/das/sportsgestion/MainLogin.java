@@ -1,6 +1,7 @@
 package org.das.sportsgestion;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -27,12 +28,28 @@ public class MainLogin extends Activity {
 			
 			@Override
 			public void onClick(View v) {
+				Intent intentPerfil = new Intent(getApplicationContext(), MainPerfil.class);
 				if(coincidenContrasenias()){
-					Toast.makeText(getApplicationContext(), "Coinciden!!", 3000).show();
+					intentPerfil.putExtra("Boton", "Aceptar");
+					intentPerfil.putExtra("Usuario", edLogUser.getText().toString());
+					startActivity(intentPerfil);
 				}
 				else{
-					Toast.makeText(getApplicationContext(), "Nooo :(", 3000).show();
+					
+					Toast.makeText(getApplicationContext(),R.string.ContraseniaNoCoinciden, 3000).show();
 				}
+			}
+		});
+		
+		butLogReg = (Button) findViewById(R.id.butRegistrarse);
+		butLogReg.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intentPerfil = new Intent(getApplicationContext(), MainPerfil.class);
+				intentPerfil.putExtra("Boton", "Registrar");
+				startActivity(intentPerfil);
+				
 			}
 		});
 	}
@@ -48,9 +65,7 @@ public class MainLogin extends Activity {
 			if(aCursor.getString(0).compareTo(edLogPwd.getText().toString()) == 0 ){
 				coinciden = true;
 			}
-		}
-		
-		
+		}		
 		return coinciden;
 	}
 	

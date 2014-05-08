@@ -4,49 +4,88 @@
     <string name="app_name">SportsGestion</string>
     <string name="action_settings">Settings</string>
     
-    <string name="BUSCAR">BUSCAR</string>
-    <string name="DESCUENTOS">DESCUENTOS %</string>
-    <string name="MiCuenta"> MI CUENTA</string>
-    <string name="MisReservas"> MIS RESERVAS</string>
-    <string name="UNIRSE"> UNIRSE PARA JUGAR </string>
+
+    
+<!-- General -->
     <string name="Si"> Si</string>
     <string name="No"> No</string>
+    <string name="Aceptar"> Aceptar</string>
+
+<!-- Menu -->
+   	<string name= "Castellano"> Castellano</string>
+	<string name= "Euskera"> Euskera</string>
+	<string name= "Ingles"> English</string>
+	<string name= "Ajustes"> Ajustes</string>  
+	<string name= "Administrador"> Administrador</string>  
+    
+<!-- MainActivity -->
+    <string name="Buscar">BUSCAR</string>
     <string name="MensajeSalirAplicacion"> ¿Quieres salir de la aplicación?</string>
+	<string name= "Ayuda"> Esta es la ayuda de la aplicación desarrollada por Iñigo Ochoa de Erive Lasso de la Vega
+	    para la asigantura de DAS</string>
+	<string name="Contrasena"> Escriba la contraseña de administrador: </string>
+	<string name="IdentifAdmin"> Entrar como administrador</string> 
+	<string name="GestionarPolid"> GESTIONAR POLIDEPORTIVOS</string> 
+	<string name="Descuentos">DESCUENTOS</string>
+    <string name="MiCuenta"> MI CUENTA</string> 
+    <string name="Salir"> SALIR</string> 
+
     
-    <string name="Entrar"> Entrar</string>
-    <string name="Salir"> Salir</string>
-    
-    <string name="QueBuscas"> ¿Qué buscas?</string>
-    
-    
-    <string name="kDeporte"> <i>Deporte</i></string>
-    <string name="kLugar"> <i>Lugar</i></string>
-    <string name="kHora"> <i>Hora</i></string>
-    <string name="kProvincia"> <i>Provincia</i></string>
-    <string name="kLocalidad"> <i>Localidad</i></string>
-    <string name="kIncluido"> <i>Incluido</i></string>
-    
-    
-    
+<!-- BusquedaActivity.java -->    
     <string name="Deporte"> DEPORTE</string>
     <string name="Lugar"> LUGAR</string>
     <string name="Hora"> HORA</string>
     <string name="Incluido"> INCLUIDO</string>
-    
-    <string name="Entradas"> ENTRADA</string>
-    <string name="Duchas"> DUCHAS</string>
-    <string name="Precio"> PRECIO</string>
-    <string name="Pagar"> PAGAR</string>
-    <string name="Extras"> AÑADIR EXTRAS</string>
-    <string name="Descripcion"> Descripción del \ncentro y de la \ninstalación a \n 
-        reservar</string>
-    <string name="TituloExtras"> Extras</string>
-    
-    <string name="Usuario"> <i>Usuario</i></string>
-    <string name="Contrasenia"> <i>Contraseña</i></string>
-    <string name="title_activity_busqueda">BusquedaActivity</string>
-    
-    
-    
+    <string name="QueBuscas"> ¿Qué buscas?</string>
 
+<!-- BusquedaConfirmar.java (FragmentDetails) -->
+    <string name="Imprimir"> IMPRIMIR TICKET</string>
+    <string name="Distancia"> DISTANCIA </string> 
+    <string name="Nombre"> NOMBRE</string>
+    <string name="Calle"> CALLE</string>
+    <string name="Localidad"> LOCALIDAD</string>
+    <string name="Precio"> PRECIO</string>
+    <string name="Instalaciones"> Instalaciones \npara que deporte</string>
+    <string name="Ticket"> ¿Quiere imprimir su ticket?</string>
+    <string name="TicketImprimido"> Ticket Imprimido</string>
+    <string name="TicketImprOk"> Su ticket se ha imprimido correctamente</string>
+    <string name="TicketNo"> GRACIAS POR SU COLABORACIÓN.</string>
+    
+    
+<!-- CalcularDistancia.java  -->
+    <string name="MiPosicion"> MI POSICION </string>
+    <string name="Calcular"> CALCULAR DISTANCIA </string>
+    <string name="Longitud"> LONGITUD</string>
+    <string name="Latitud"> LATITUD </string>
+    <string name="NoCoordenadas"> No hay coordenadas</string>
+    
+<!-- MenuAdministrador -->
+	<string name="Modificar"> MODIFICAR</string>
+	<string name="Borrar"> BORRAR</string>
+    <string name="BorrarTodo"> BORRAR TODOS</string>
+    <string name="Insertar"> INSERTAR</string>  
+    <string name="BorrarPolideportivo"> "Borrar Polideportivo"</string> 
+    <string name="ModificarPolideportivo"> "Modificar Polideportivo"</string>  
+	<string name="MensajeCualBorrar"> "Escriba cuál es el polideportivo que quiere borrar:"</string>
+	<string name="MensajeCualModificar"> "Escriba cuál es el polideportivo que quiere modificar:"</string>
+	<string name="MensajeBorrarTodos"> "¿Estas seguro de que quieres borrar todos los polideportivos?"</string>
+    
+<!-- AdminInsertar -->
+	<string name= "MensajeInsercion"> LA INSERCIÓN SE HA HECHO CORRECTAMENTE</string>
+    <string name= "MensajeModificacion"> LA MODIFICACIÓN SE HA HECHO CORRECTAMENTE</string>
+    <string name= "PolideportivoElegido"> Este polideportivo ya está escogido</string>
+    <string name= "CampoVacio"> Hay algun campo vacío</string>
+
+    
+    <!-- Perfil -->
+	<string name= "ContraseniaNoCoinciden"> Las contraseñas no coinciden</string>
+    <string name= "UsuarioElegido"> Este usuario ya está escogido</string>
+    <string name= "Registro"> REGISTRO</string>
+    <string name= "Contrasenia"> Contraseña</string>
+    <string name= "RepContrasenia"> Repetir\ncontraseña</string>
+    <string name= "PolideportivoFav"> Polideportivo\nFavorito</string>
+    <string name= "BorrarUsuario"> Se ha borrado correctamente</string>
+    <string name="User"> Usuario</string>
+    
+    <string name="title_activity_busqueda">BusquedaActivity</string> 
 </resources>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SportsGestion</string>
+    <string name="action_settings">Settings</string>
+    
+
+    
+<!-- General -->
+    <string name="Si"> Si</string>
+    <string name="No"> No</string>
+    <string name="Aceptar"> AceptarEN</string>
+
+<!-- Menu -->
+   	<string name= "Castellano"> Castellano</string>
+	<string name= "Euskera"> Euskera</string>
+	<string name= "Ingles"> English</string>
+	<string name= "Ajustes"> Ajustes</string>  
+	<string name= "Administrador"> Administrador</string>  
+    
+<!-- MainActivity -->
+    <string name="Buscar">BUSCAR</string>
+    <string name="MensajeSalirAplicacion"> ¿Quieres salir de la aplicación?EN</string>
+	<string name= "Ayuda"> Esta es la ayuda de la aplicación desarrollada por Iñigo Ochoa de Erive Lasso de la Vega
+	    para la asigantura de DAS EN</string>
+	<string name="Contrasena"> Escriba la contraseña de administrador:EN </string>
+	<string name="IdentifAdmin"> Entrar como administrador EN</string> 
+	<string name="GestionarPolid"> GESTIONAR POLIDEPORTIVOS EN</string> 
+	<string name="Descuentos">DESCUENTOS %EN</string>
+    <string name="MiCuenta"> MI CUENTA EN</string> 
+    <string name="Salir"> SALIR EN</string> 
+
+    
+<!-- BusquedaActivity.java -->    
+    <string name="Deporte"> DEPORTE EN</string>
+    <string name="Lugar"> LUGAR EN</string>
+    <string name="QueBuscas"> ¿Qué buscas? EN</string>
+
+<!-- BusquedaConfirmar.java (FragmentDetails) -->
+    <string name="Imprimir"> IMPRIMIR TICKET EN</string>
+    <string name="Distancia"> DISTANCIA EN </string> 
+    <string name="Nombre"> NOMBRE EN</string>
+    <string name="Calle"> CALLE EN</string>
+    <string name="Localidad"> LOCALIDAD EN</string>
+    <string name="Precio"> PRECIO EN</string>
+    <string name="Instalaciones"> Instalaciones \npara que deporte EN</string>
+    <string name="Ticket"> ¿Quiere imprimir su ticket? EN</string>
+    <string name="TicketImprimido"> Ticket Imprimido EN</string>
+    <string name="TicketImprOk"> Su ticket se ha imprimido correctamente EN</string>
+    <string name="TicketNo"> GRACIAS POR SU COLABORACIÓN.EN</string>
+        <string name="Pagar"> PAGAR</string>
+    
+    
+<!-- CalcularDistancia.java  -->
+    <string name="MiPosicion"> MI POSICION EN</string>
+    <string name="Calcular"> CALCULAR DISTANCIA EN</string>
+    <string name="Longitud"> LONGITUD EN</string>
+    <string name="Latitud"> LATITUD EN</string>
+    <string name="NoCoordenadas"> No hay coordenadas EN</string>
+    
+<!-- MenuAdministrador -->
+	<string name="Modificar"> MODIFICAR EN</string>
+	<string name="Borrar"> BORRAR EN</string>
+    <string name="BorrarTodo"> BORRAR TODOS EN</string>
+    <string name="Insertar"> INSERTAR EN</string>  
+    <string name="BorrarPolideportivo"> "Borrar Polideportivo" EN</string> 
+    <string name="ModificarPolideportivo"> "Modificar Polideportivo" EN</string>  
+	<string name="MensajeCualBorrar"> "Escriba cuál es el polideportivo que quiere borrar:" EN</string>
+	<string name="MensajeCualModificar"> "Escriba cuál es el polideportivo que quiere modificar:" EN</string>
+	<string name="MensajeBorrarTodos"> "¿Estas seguro de que quieres borrar todos los polideportivos?" EN</string>
+    
+<!-- AdminInsertar -->
+	<string name= "MensajeInsercion"> LA INSERCIÓN SE HA HECHO CORRECTAMENTE EN</string>
+    <string name= "MensajeModificacion"> LA MODIFICACIÓN SE HA HECHO CORRECTAMENTE EN</string>
+    <string name= "PolideportivoElegido"> Este polideportivo ya está escogido EN</string>
+    <string name= "CampoVacio"> Hay algun campo vacío EN</string>
+
+    
+    <!-- Perfil -->
+	<string name= "ContraseniaNoCoinciden"> Las contraseñas no coinciden EN</string>
+    <string name= "UsuarioElegido"> Este usuario ya está escogido EN</string>
+    <string name= "Registro"> REGISTRO EN</string>
+    <string name= "Contrasenia"> Contraseña EN</string>
+    <string name= "RepContrasenia"> Repetir\ncontraseña EN</string>
+    <string name= "PolideportivoFav"> Polideportivo\nFavorito EN</string>
+    <string name= "BorrarUsuario"> Se ha borrado correctamente EN</string>
+    <string name="User"> Usuario</string>
+    
+    <string name="title_activity_busqueda">BusquedaActivity</string> 
+</resources>

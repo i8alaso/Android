@@ -16,8 +16,7 @@
 	        android:layout_centerHorizontal="true"
 	        android:layout_marginTop="102dp"
 	        android:ems="10"
-	        android:background="@android:color/white"
-	        android:text="@string/Usuario" />
+	        android:background="@android:color/white"/>
 	
 	    <EditText
 	        android:id="@+id/edContrasenia"
@@ -28,25 +27,42 @@
 	        android:layout_marginTop="78dp"
 	        android:ems="10"
 	        android:background="@android:color/white"
+	         android:inputType="textPassword"/>
+
+	    <Button
+	        android:id="@+id/butRegistrarse"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentBottom="true"
+	        android:layout_alignParentLeft="true"
+	        android:layout_marginLeft="17dp"
+	        android:text="@string/Registro" />
+
+	    <TextView
+	        android:id="@+id/textView1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignBottom="@+id/edUsuario"
+	        android:layout_alignLeft="@+id/edUsuario"
+	        android:layout_marginBottom="44dp"
+	        android:text="@string/User" />
+
+	    <TextView
+	        android:id="@+id/textView2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignRight="@+id/textView1"
+	        android:layout_centerVertical="true"
 	        android:text="@string/Contrasenia" />
-	
+
 	    <Button
 	        android:id="@+id/butLogin"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_alignParentBottom="true"
-	        android:layout_alignRight="@+id/edContrasenia"
-	        android:layout_marginBottom="78dp"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginRight="14dp"
 	        android:text="@string/Entrar" />
-	
-	    <Button
-	        android:id="@+id/butRegistrarse"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignBaseline="@+id/butLogin"
-	        android:layout_alignBottom="@+id/butLogin"
-	        android:layout_alignLeft="@+id/edContrasenia"
-	        android:text="Button" />
 	
 	</RelativeLayout>
 </ScrollView>

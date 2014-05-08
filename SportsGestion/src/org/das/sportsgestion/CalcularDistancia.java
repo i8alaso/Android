@@ -1,13 +1,10 @@
 package org.das.sportsgestion;
 
-import java.security.Provider;
 import java.util.List;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.location.Location;
-import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.View;
@@ -32,7 +29,6 @@ public class CalcularDistancia extends Activity{
 		setContentView(R.layout.activity_calcular_distancia);
 
 		nombre = getIntent().getExtras().getString("NombreP");
-		Toast.makeText(getApplicationContext(), nombre, 7511).show();
 
 		edLatitud = (EditText) findViewById(R.id.editLatitud);
 		edLongitud = (EditText) findViewById(R.id.editLongitud);
@@ -82,7 +78,7 @@ public class CalcularDistancia extends Activity{
 					txtDistancia.setText(calcularDistancia() + " KM");					
 				}
 				else{
-					Toast.makeText(getApplicationContext(), "Hay algun campo vacío", 4000).show();
+					Toast.makeText(getApplicationContext(), R.string.CampoVacio, 4000).show();
 
 				}
 			}

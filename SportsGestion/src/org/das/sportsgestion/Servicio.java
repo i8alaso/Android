@@ -1,8 +1,7 @@
 package org.das.sportsgestion;
 
-import java.util.ArrayList;
-import java.util.Random;
 
+import java.util.Random;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -12,11 +11,10 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
-import android.widget.Toast;
+
 
 public class Servicio extends Service {
-	
-	private ArrayList<String> listaPolideportivos = new ArrayList<String>();
+
 	private Intent intentDescuento;
 
 	@Override
@@ -35,7 +33,7 @@ public class Servicio extends Service {
 			@Override
 			public void run() {
 				lanzarNotificacion();
-				handler.postDelayed(this, 60000);
+				handler.postDelayed(this, 300000);
 			}
 				
 		};
@@ -71,22 +69,17 @@ public class Servicio extends Service {
 		aBuilder.setTicker(descuento);
 		aBuilder.setContentIntent(intentEnNoti);
 		aBuilder.setDefaults(Notification.DEFAULT_ALL);
-		aBuilder.addAction(R.drawable.tick, "SÍ", intentEnNoti);
+		aBuilder.addAction(R.drawable.tick, "OK", intentEnNoti);
 		NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 		mNotificationManager.notify(1,aBuilder.build());
 		aBuilder.setAutoCancel(true);
 	}
 
 	private String  elegirDescuento() {
-		Random rPolid= new Random();
 		Random rDesc = new Random();
-		String nombrePolideportivo = "";
-		
 		int porcentaje = (rDesc.nextInt(13)+1)*5;
 		
-		return ("Usted tiene un ") + porcentaje 
-				//+ (" % en el polideportivo ") + nombrePolideportivo
-				;
+		return ("Usted tiene un ") + porcentaje + ("% en el polideportivo que quieras");
 	}
 }		
 

@@ -1,21 +1,10 @@
 package org.das.sportsgestion;
 
 import java.util.Locale;
-
-import android.app.Activity;
-import android.app.ActionBar;
-import android.app.Fragment;
 import android.os.Bundle;
-import android.view.ContextMenu;
-import android.view.ContextMenu.ContextMenuInfo;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
-import android.os.Bundle;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -23,8 +12,6 @@ import android.content.res.Configuration;
 import android.graphics.Color;
 import android.support.v4.app.FragmentActivity;
 import android.text.InputType;
-import android.view.Menu;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -33,9 +20,7 @@ import android.widget.Toast;
 public class MainActivity extends FragmentActivity{
 	
 	private Button btnBuscar, btnGestion, btnCuenta, btnDescuentos, btnSalir;
-	
 	private String idiomaSeleccionado;
-	
 	private Intent intBuscar;
 	
 	@Override
@@ -60,7 +45,7 @@ public class MainActivity extends FragmentActivity{
 
 		
 		btnBuscar = (Button) findViewById(R.id.butBuscar);
-		btnBuscar.setText(R.string.BUSCAR);
+		btnBuscar.setText(R.string.Buscar);
 		btnBuscar.setBackgroundColor(Color.GRAY);
 		btnBuscar.setOnClickListener(new View.OnClickListener() {
 			
@@ -217,11 +202,7 @@ public class MainActivity extends FragmentActivity{
 				LinearLayout.LayoutParams.FILL_PARENT);
 		input.setLayoutParams(lp);
 		input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-		
-		//Quitar luego, ahora para ganar tiempo
-		input.setText("admin");
-		
-		
+
 		adminAlert.setView(input);
 		
 		adminAlert.setPositiveButton(R.string.Aceptar, new DialogInterface.OnClickListener() {

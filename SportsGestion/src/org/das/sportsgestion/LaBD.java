@@ -1,7 +1,5 @@
 package org.das.sportsgestion;
 
-import java.util.ArrayList;
-
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -12,7 +10,6 @@ public class LaBD extends SQLiteOpenHelper{
 
 	private static LaBD miLaBD;
 	private SQLiteDatabase db = getWritableDatabase();
-//	private ArrayList<String> listaPolideportivos;
 	
 	private LaBD(Context context, String name, CursorFactory factory, int version)  {
 		super(context, name, factory, version);
@@ -28,13 +25,10 @@ public class LaBD extends SQLiteOpenHelper{
 	}
 
 	@Override
-	public void onCreate(SQLiteDatabase db) {
-//		listaPolideportivos = new ArrayList<String>();
-		
+	public void onCreate(SQLiteDatabase db) {	
 		db.execSQL("CREATE TABLE Polideportivos ('Nombre' TEXT PRIMARY KEY,'Localidad' TEXT, 'Calle' TEXT, 'Deporte' TEXT, 'Latitud' DOUBLE, 'Longitud' DOUBLE, 'Precio' DOUBLE)");
 		db.execSQL("CREATE TABLE Usuarios ('idUsuario' TEXT PRIMARY KEY, 'Password' TEXT, 'Localidad' TEXT, 'Calle' TEXT, 'PolideportivoFavorito' TEXT, FOREIGN KEY (PolideportivoFavorito) REFERENCES Polideportivos(Nombre))");
-		
-		
+	
 		db.execSQL("INSERT INTO 'Polideportivos' (Nombre, Localidad, Calle, Deporte, Latitud, Longitud, Precio) values ('TXURDINAGA', 'Bilbao', 'Circo Amateur ', 'Futbol', 43.2503252, -2.90823,4.79)" );
 		db.execSQL("INSERT INTO 'Polideportivos' (Nombre, Localidad, Calle, Deporte, Latitud, Longitud, Precio) values ('FANGO', 'Bilbao', 'Errekalde Errepidea, 52', 'Futbol', 43.2462907, -2.9341461, 5.54)" );
 		db.execSQL("INSERT INTO 'Polideportivos' (Nombre, Localidad, Calle, Deporte, Latitud, Longitud, Precio) values ('SAN IGNACIO', 'Bilbao', 'Calle Orixe', 'Futbol', 43.280619, -2.95973, 3.58)" );
@@ -46,20 +40,7 @@ public class LaBD extends SQLiteOpenHelper{
 		db.execSQL("INSERT INTO 'Polideportivos' (Nombre, Localidad, Calle, Deporte, Latitud, Longitud, Precio) values ('BUESA ARENA', 'Gasteiz', 'Calle Portal', 'Baloncesto', 42.86434,-2.64391, 37.0)" );
 		
 		db.execSQL("INSERT INTO 'Usuarios' (idUsuario, Password, Localidad, Calle, PolideportivoFavorito) values ('admin', 'admin', 'null', 'null', 'null')" );
-		
-		
-//		listaPolideportivos.add("TXURDINAGA");
-//		listaPolideportivos.add("FANGO");
-//		listaPolideportivos.add("SAN MAMES");
-//		listaPolideportivos.add("SAN IGNACIO");
-//		listaPolideportivos.add("MENDIZORROZA");
-//		listaPolideportivos.add("ILLUMBE");
-//		listaPolideportivos.add("BILBAO ARENA");
-//		listaPolideportivos.add("BUESA ARENA");
-		
-		
-		
-		
+		db.execSQL("INSERT INTO 'Usuarios' (idUsuario, Password, Localidad, Calle, PolideportivoFavorito) values ('user', 'user', 'Barakaldo', 'c/ Juan', 'Miribilla')" );
 	}
 
 	@Override
@@ -71,9 +52,7 @@ public class LaBD extends SQLiteOpenHelper{
 	public void insertarPolideportivo(String pNombre, String pLocalidad, String pCalle, String pDeporte, Double pLongitud, Double pLatitud, Double pPrecio){
 		String sql = "INSERT INTO 'Polideportivos' (Nombre, Localidad, Calle, Deporte, Latitud, Longitud, Precio) VALUES ('" + pNombre +"','"
 					+ pLocalidad + "', '" + pCalle + "','" + pDeporte + "'," + pLatitud + ","+ pLongitud + ","+ pPrecio +")";
-		this.db.execSQL(sql);
-		//listaPolideportivos.add("pNombre");
-		
+		this.db.execSQL(sql);	
 	}
 	
 	public void modificarPolideportivo(String pClave, String pNombre, String pLocalidad, String pCalle, String pDeporte, Double pLongitud, Double pLatitud, Double pPrecio){
@@ -106,20 +85,6 @@ public class LaBD extends SQLiteOpenHelper{
 
 	public void eliminar(String pNombre) {
 		String sql = "DELETE FROM Polideportivos WHERE Nombre ='" + pNombre + "'";
-		boolean encontrado = false;
-		int cont = 0;
-		
-//		while (cont < listaPolideportivos.size()-1 && !encontrado){
-//			if(listaPolideportivos.get(cont) == pNombre){
-//				encontrado = true;
-//			}
-//			else{
-//				cont++;
-//			}
-//		}
-//		
-//		listaPolideportivos.remove(cont);
-		
 		this.db.execSQL(sql);
 	}
 	
@@ -137,7 +102,7 @@ public class LaBD extends SQLiteOpenHelper{
 	}
 	
 	public Cursor buscarUsuario(String pUsuario){
-		String sql = "SELECT * Usuarios WHERE idUsuario = '" + pUsuario + "'" ;
+		String sql = "SELECT * FROM Usuarios WHERE idUsuario = '" + pUsuario + "'" ;
 		return db.rawQuery(sql, null);
 	}
 	
@@ -146,6 +111,21 @@ public class LaBD extends SQLiteOpenHelper{
 		return db.rawQuery(sql, null);
 	}
 	
+	public Cursor comprobarSiExisteUsuario(String pNombre){
+		String sql = "SELECT COUNT (*) FROM Usuarios WHERE idUsuario = '" + pNombre + "'"; 
+		return db.rawQuery(sql, null);
+	}
+	
+	public void insertarUsuario(String pNombre, String pLocalidad, String pCalle, String pPolideportivo, String pPassword){
+		String sql = "INSERT INTO 'Usuarios' (IdUsuario, Password, Localidad, Calle, PolideportivoFavorito) VALUES ('" + pNombre +"','"
+				+ pPassword + "','" + pLocalidad + "', '" + pCalle + "','" + pPolideportivo + "')";
+		this.db.execSQL(sql);
+	}
+	
+	public void eliminarUsuario(String pNombre) {
+		String sql = "DELETE FROM Usuarios WHERE idUsuario ='" + pNombre + "'";	
+		this.db.execSQL(sql);
+	}
 	
 	
 	

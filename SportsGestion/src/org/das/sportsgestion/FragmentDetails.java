@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-
 import android.app.AlertDialog;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -21,9 +20,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView.FindListener;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -51,10 +48,7 @@ public class FragmentDetails extends Fragment{
 		butDistancia.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
-			public void onClick(View arg0) {
-
-				Toast.makeText(getActivity(), nombre, 4511).show();
-				
+			public void onClick(View arg0) {				
 				Intent intentDistancia = new Intent(getActivity(), CalcularDistancia.class);
 				intentDistancia.putExtra("NombreP",nombre);
 				startActivity(intentDistancia);

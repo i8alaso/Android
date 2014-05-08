@@ -29,6 +29,7 @@
 	<string name="Descuentos">DESCUENTOS %</string>
     <string name="MiCuenta"> MI CUENTA</string> 
     <string name="Salir"> SALIR</string> 
+    <string name="Entrar"> SARTU</string>
 
     
 <!-- BusquedaActivity.java -->    
@@ -50,6 +51,7 @@
     <string name="TicketImprimido"> Ticket Imprimido</string>
     <string name="TicketImprOk"> Su ticket se ha imprimido correctamente</string>
     <string name="TicketNo"> GRACIAS POR SU COLABORACIÓN.</string>
+    <string name="Pagar"> PAGAR</string>
     
     
 <!-- CalcularDistancia.java  -->
@@ -76,28 +78,16 @@
     <string name= "PolideportivoElegido"> Este polideportivo ya está escogido</string>
     <string name= "CampoVacio"> Hay algun campo vacío</string>
 
-
-
-    <string name="Usuario"> <i>Usuario</i></string>
     
-    <string name="title_activity_busqueda">BusquedaActivity</string>
+    <!-- Perfil -->
+	<string name= "ContraseniaNoCoinciden"> Las contraseñas no coinciden</string>
+    <string name= "UsuarioElegido"> Este usuario ya está escogido</string>
+    <string name= "Registro"> REGISTRO</string>
+    <string name= "Contrasenia"> Contraseña</string>
+    <string name= "RepContrasenia"> Repetir\ncontraseña</string>
+    <string name= "PolideportivoFav"> Polideportivo\nFavorito</string>
+    <string name= "BorrarUsuario"> Se ha borrado correctamente</string>
+    <string name="User"> Usuario</string>
     
-<!-- BORRAR -->    
-
-    <string name="MisReservas"> MIS RESERVAS</string>
-    <string name="UNIRSE"> UNIRSE PARA JUGAR </string>
-    <string name="Descripcion"> Descripción del \ncentro y de la \ninstalación a \nreservar</string>
-    <string name="TituloExtras"> Extras</string>
-    <string name="Entradas"> ENTRADA</string>
-    <string name="Duchas"> DUCHAS</string>
-
-    <string name="Pagar"> PAGAR</string>
-    <string name="kDeporte"> <i>Deporte</i></string>
-    <string name="kLugar"> <i>Lugar</i></string>
-    <string name="kHora"> <i>Hora</i></string>
-    <string name="kProvincia"> <i>Provincia</i></string>
-    <string name="kLocalidad"> <i>Localidad</i></string>
-    <string name="kIncluido"> <i>Incluido</i></string>
-    
-
+    <string name="title_activity_busqueda">BusquedaActivity</string> 
 </resources>

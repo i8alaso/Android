@@ -8,16 +8,14 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.Display;
 import android.view.Surface;
-import android.view.View;
 import android.view.WindowManager;
-import android.widget.Toast;
 
 public class ResultadoConLista extends FragmentActivity implements IListFragmentListener {
 
 	private WindowManager mWindowManager;
 	private Display mDisplay;
 	
-	private String localidad,  deporte, nombre;
+	private String localidad,  deporte;
 	private static String nombrePolid;
 	
 	@Override

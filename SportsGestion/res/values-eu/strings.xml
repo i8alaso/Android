@@ -4,45 +4,88 @@
     <string name="app_name">SportsGestion</string>
     <string name="action_settings">Settings</string>
     
-    <string name="BUSCAR">BILATU</string>
-    <string name="DESCUENTOS"></string>
-    <string name="MiCuenta"></string>
-    <string name="MisReservas"></string>
-    <string name="UNIRSE">SARTU JOKATZEKO </string>
-    <string name="Si"> BAI </string>
-    <string name="No"> EZ</string>
-    <string name="MensajeSalirAplicacion"> Aplikaziotik irten nahi duzula ziur zaude?</string>
+
     
+<!-- General -->
+    <string name="Si"> Bai</string>
+    <string name="No"> Ez</string>
+    <string name="Aceptar"> Ondo</string>
+
+<!-- Menu -->
+   	<string name= "Castellano"> Castellano</string>
+	<string name= "Euskera"> Euskera</string>
+	<string name= "Ingles"> English</string>
+	<string name= "Ajustes"> Ajustes</string>  
+	<string name= "Administrador"> Administratzaile</string>  
+    
+<!-- MainActivity -->
+    <string name="Buscar">BILATU</string>
+    <string name="MensajeSalirAplicacion"> Aplikazioatik irten nahi duzu?</string>
+	<string name= "Ayuda"> Esta es la ayuda de la aplicación desarrollada por Iñigo Ochoa de Erive Lasso de la Vega
+	    para la asigantura de DAS</string>
+	<string name="Contrasena"> Erabiltzaileraren pasahitza idatzi: </string>
+	<string name="IdentifAdmin"> Administratzailearekin sartu</string> 
+	<string name="GestionarPolid"> KIROLDEGIEN KUDEAKETA</string> 
+	<string name="Descuentos">DESKONTUAK</string>
+    <string name="MiCuenta"> NIRE TOKIA</string> 
+    <string name="Salir"> IRTEN</string> 
     <string name="Entrar"> SARTU</string>
-    <string name="Salir"> IRTEN </string>
+
     
-    <string name="QueBuscas"> Zer bilatu nahi duzu? </string>
-    
-	<string name= "kDeporte"> <i>Kirola</i> </string>
-	<string name= "kLugar"> <i>Lekua</i> </string>
-	<string name= "kHora"> <i>Ordua</i> </string>
-	<string name= "kProvincia"> <i></i> </string>
-	<string name= "kLocalidad"> <i></i> </string>
-    <string name="kIncluido"> <i></i></string>
-       
+<!-- BusquedaActivity.java -->    
     <string name="Deporte"> KIROLA</string>
     <string name="Lugar"> LEKUA</string>
     <string name="Hora"> ORDUA</string>
-    <string name="Incluido"> SARTZEN DENA</string>
+    <string name="QueBuscas"> Zer bilatu nahi duzu??</string>
+
+<!-- BusquedaConfirmar.java (FragmentDetails) -->
+    <string name="Imprimir"> TICKETA IMPRIMATU</string>
+    <string name="Distancia"> DISTANTZIA </string> 
+    <string name="Nombre"> IZENA</string>
+    <string name="Calle"> KALEA</string>
+    <string name="Localidad"> HERRIA</string>
+    <string name="Precio"> PRETZIOA</string>
+    <string name="Instalaciones"> Kirola honetako \ninstalazioak</string>
+    <string name="Ticket"> Zure ticketa imprimatu nahi duzu?</string>
+    <string name="TicketImprimido"> Inprimatutako ticketa</string>
+    <string name="TicketImprOk"> Zure ticketa ondo imprimatu da</string>
+    <string name="TicketNo"> ESKERRIK ASKO.</string>
     
-    <string name="Entradas"> Sarrera</string>
-    <string name="Duchas"> </string>
-    <string name="Precio"> Prezio</string>
-    <string name="Pagar"> ORDAINDU</string>
-    <string name="Extras"> EXTRAK GEHITU</string>
-    <string name="Descripcion"> Lekuaren \neta instalazioaren \ndeskribapena</string>
-    <string name="TituloExtras"> Extrak</string>
     
-	<string name= "Usuario"> <i> Erabiltzailea </i></string>
-	<string name= "Contrasenia"> <i> Pasahitza</i></string>
+<!-- CalcularDistancia.java  -->
+    <string name="MiPosicion"> NIRE POSIZIO </string>
+    <string name="Calcular"> DISTANTZIA KALKULATU </string>
+    <string name="Longitud"> LONGITUDE</string>
+    <string name="Latitud"> LATITUDE </string>
+    <string name="NoCoordenadas"> Koordenadarik ez daude</string>
+    
+<!-- MenuAdministrador -->
+	<string name="Modificar"> ALDATU</string>
+	<string name="Borrar"> KENDU</string>
+    <string name="BorrarTodo"> GUZTIAK KENDU</string>
+    <string name="Insertar"> GEHITU</string>  
+    <string name="BorrarPolideportivo"> "Kiroldegia ezabatu"</string> 
+    <string name="ModificarPolideportivo"> "Kiroldegia aldatu"</string>  
+	<string name="MensajeCualBorrar"> "Ezabatu nahi duzun Kiroldegiaren izena idatzi:"</string>
+	<string name="MensajeCualModificar"> "Aldatu nahi duzun Kiroldegiaren izena idatzi:"</string>
+	<string name="MensajeBorrarTodos"> "¿Estas seguro de que quieres borrar todos los polideportivos?"</string>
+    
+<!-- AdminInsertar -->
+	<string name= "MensajeInsercion"> GEHIKETA ONDO EGIN DA</string>
+    <string name= "MensajeModificacion"> ALDAKETA ONDO EGIN DA</string>
+    <string name= "PolideportivoElegido"> Kiroldegiren izena beste batek hartu du</string>
+    <string name= "CampoVacio"> Arloren bat hutsik dago</string>
 
     
+    <!-- Perfil -->
+	<string name= "ContraseniaNoCoinciden"> Pasahitzak ez dira berdinak</string>
+    <string name= "UsuarioElegido"> Erabiltzailearen izena beste batek hartu du</string>
+    <string name= "Registro"> ERREGISTROA</string>
+    <string name= "Contrasenia"> Pasahitza</string>
+    <string name= "RepContrasenia"> Pasahitza\nerrepikatu</string>
+    <string name= "PolideportivoFav"> Gustuko\nkiroldegia</string>
+    <string name= "BorrarUsuario"> Ondo ezabatu da</string>
+    <string name="User"> Erabiltzaile</string>
     
-    
-
+    <string name="title_activity_busqueda">BusquedaActivity</string> 
 </resources>
