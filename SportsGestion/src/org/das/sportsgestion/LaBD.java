@@ -91,8 +91,7 @@ public class LaBD extends SQLiteOpenHelper{
 	public void eliminarTodo(){
 		String sql = "DELETE FROM Polideportivos";
 		this.db.execSQL(sql);
-		
-//		listaPolideportivos.clear();
+
 	}
 
 	public void obtenerCoordenadas(String pNombre) {

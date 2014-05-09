@@ -30,9 +30,7 @@ public class ConfiguracionWidget extends Activity {
         Bundle params = intentOrigen.getExtras();
  
         //Obtenemos el ID del widget que se está configurando
-        widgetId = params.getInt(
-                AppWidgetManager.EXTRA_APPWIDGET_ID,
-                AppWidgetManager.INVALID_APPWIDGET_ID);
+        widgetId = params.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
  
         //Establecemos el resultado por defecto (si se pulsa el botón 'Atrás'
         //del teléfono será éste el resultado devuelto).
@@ -57,15 +55,13 @@ public class ConfiguracionWidget extends Activity {
                 @Override
                 public void onClick(View arg0) {
                     //Guardamos el mensaje personalizado en las preferencias
-                    SharedPreferences prefs =
-                        getSharedPreferences("WidgetPrefs", Context.MODE_PRIVATE);
+                    SharedPreferences prefs = getSharedPreferences("WidgetPrefs", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = prefs.edit();
                     editor.putString("msg_" + widgetId, txtMensaje.getText().toString());
                     editor.commit();
          
                     //Actualizamos el widget tras la configuración
-                    AppWidgetManager appWidgetManager =
-                        AppWidgetManager.getInstance(ConfiguracionWidget.this);
+                    AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(ConfiguracionWidget.this);
                     Widget.actualizarWidget(ConfiguracionWidget.this, appWidgetManager, widgetId);
          
                     //Devolvemos como resultado: ACEPTAR (RESULT_OK)

@@ -95,5 +95,5 @@
     
     <string name="title_activity_busqueda">BusquedaActivity</string> 
     <string name= "Actualizar"> Actualizar</string>
-        <string name="mensaje_config">Mensaje de configuracion:</string>
+        <string name="mensaje_config">Escribe tu usuario:</string>
 </resources>

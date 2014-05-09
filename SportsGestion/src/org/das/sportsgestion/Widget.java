@@ -3,24 +3,21 @@ package org.das.sportsgestion;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-import android.app.Application;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.widget.RemoteViews;
 
 public class Widget extends AppWidgetProvider {
 	@Override
-    public void onUpdate(Context context,
-                 AppWidgetManager appWidgetManager,
-                 int[] appWidgetIds) {
+    public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
 		
 		//Iteramos la lista de widgets en ejecución
-	    for (int i = 0; i < appWidgetIds.length; i++)
-	    {
+	    for (int i = 0; i < appWidgetIds.length; i++){
 	        //ID del widget actual
 	        int widgetId = appWidgetIds[i];
 	 
@@ -39,8 +36,7 @@ public class Widget extends AppWidgetProvider {
 	            AppWidgetManager.INVALID_APPWIDGET_ID);
 	 
 	        //Obtenemos el widget manager de nuestro contexto
-	        AppWidgetManager widgetManager =
-	            AppWidgetManager.getInstance(context);
+	        AppWidgetManager widgetManager = AppWidgetManager.getInstance(context);
 	 
 	        //Actualizamos el widget
 	        if (widgetId != AppWidgetManager.INVALID_APPWIDGET_ID) {
@@ -53,8 +49,7 @@ public class Widget extends AppWidgetProvider {
 	public void onDeleted(Context context, int[] appWidgetIds)
 	{
 		//Accedemos a las preferencias de la aplicación
-		SharedPreferences prefs = 
-			context.getSharedPreferences("WidgetPrefs", Context.MODE_PRIVATE);
+		SharedPreferences prefs = context.getSharedPreferences("WidgetPrefs", Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = prefs.edit();
 		
 		//Eliminamos las preferencias de los widgets borrados
@@ -76,28 +71,21 @@ public class Widget extends AppWidgetProvider {
             AppWidgetManager appWidgetManager, int widgetId)
 	{
 		//Recuperamos el mensaje personalizado para el widget actual
-		SharedPreferences prefs =
-		    context.getSharedPreferences("WidgetPrefs", Context.MODE_PRIVATE);
+		SharedPreferences prefs = context.getSharedPreferences("WidgetPrefs", Context.MODE_PRIVATE);
 		String mensaje = prefs.getString("msg_" + widgetId, "Hora actual:");
 		
 		//Obtenemos la lista de controles del widget actual
-		RemoteViews controles =
-		    new RemoteViews(context.getPackageName(), R.layout.widget_interfaz);
+		RemoteViews controles = new RemoteViews(context.getPackageName(), R.layout.widget_interfaz);
 		
 		//Asociamos los 'eventos' al widget
 		Intent intent = new Intent("org.das.sportsgestion.ACTUALIZAR_WIDGET");
-		intent.putExtra(
-			     AppWidgetManager.EXTRA_APPWIDGET_ID, widgetId);
-		PendingIntent pendingIntent = 
-			PendingIntent.getBroadcast(context, widgetId, 
-					intent, PendingIntent.FLAG_UPDATE_CURRENT);
+		intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, widgetId);
+		PendingIntent pendingIntent = PendingIntent.getBroadcast(context, widgetId, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 		
 		controles.setOnClickPendingIntent(R.id.BtnActualizar, pendingIntent);
 		
 		Intent intent2 = new Intent(context, MainActivity.class);
-		PendingIntent pendingIntent2 = 
-				PendingIntent.getActivity(context, widgetId, 
-						intent2, PendingIntent.FLAG_UPDATE_CURRENT);
+		PendingIntent pendingIntent2 = PendingIntent.getActivity(context, widgetId, intent2, PendingIntent.FLAG_UPDATE_CURRENT);
 		
 		controles.setOnClickPendingIntent(R.id.frameWidget, pendingIntent2);
 		
@@ -106,10 +94,21 @@ public class Widget extends AppWidgetProvider {
 		
 		//Obtenemos la hora actual
 		Calendar calendario = new GregorianCalendar();
-		String hora = calendario.getTime().toLocaleString();
+		String horaBonita = calendario.getTime().toLocaleString();
 		
 		//Actualizamos la hora en el control del widget
-		controles.setTextViewText(R.id.txtHora, hora);
+		controles.setTextViewText(R.id.txtHora, horaBonita);
+		
+		
+		Cursor cursUsuario = LaBD.getMiBD(context).buscarUsuario(mensaje);
+//		String polidepFav = cursUsuario.getString(4);
+		
+		if(cursUsuario.moveToFirst()) {
+			controles.setTextViewText(R.id.txtMensaje, "Tu polideportivo favorito es: \n" + cursUsuario.getString(4)); 
+		}
+		else{
+			controles.setTextViewText(R.id.txtMensaje, "No existe usuario");
+		}
 		
 		//Notificamos al manager de la actualización del widget actual
 		appWidgetManager.updateAppWidget(widgetId, controles);
