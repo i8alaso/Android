@@ -89,5 +89,11 @@
     <string name= "BorrarUsuario"> Se ha borrado correctamente</string>
     <string name="User"> Usuario</string>
     
+    
+    <!-- Widget -->
+    <string name= "Widget"> SportGestion</string>
+    
     <string name="title_activity_busqueda">BusquedaActivity</string> 
+    <string name= "Actualizar"> Actualizar</string>
+        <string name="mensaje_config">Mensaje de configuracion:</string>
 </resources>
